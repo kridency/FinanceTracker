@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.servlet.AnalyticsServletTest" time="3.931" tests="4" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/cupuyc/IdeaProjects/FinanceTracker/target/test-classes:/home/cupuyc/IdeaProjects/FinanceTracker/target/classes:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.1/jackson-core-2.21.1.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.1/jackson-databind-2.21.1.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.1/jackson-datatype-jsr310-2.21.1.jar:/home/cupuyc/.m2/repository/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar:/home/cupuyc/.m2/repository/org/aspectj/aspectjrt/1.9.23/aspectjrt-1.9.23.jar:/home/cupuyc/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/cupuyc/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.1.0/jakarta.servlet-api-6.1.0.jar:/home/cupuyc/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/4.0.0/jakarta.ws.rs-api-4.0.0.jar:/home/cupuyc/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/cupuyc/.m2/repository/org/yaml/snakeyaml/2.5/snakeyaml-2.5.jar:/home/cupuyc/.m2/repository/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar:/home/cupuyc/.m2/repository/org/checkerframework/checker-qual/3.49.5/checker-qual-3.49.5.jar:/home/cupuyc/.m2/repository/org/mockito/mockito-core/5.21.0/mockito-core-5.21.0.jar:/home/cupuyc/.m2/repository/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar:/home/cupuyc/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar:/home/cupuyc/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/cupuyc/.m2/repository/org/liquibase/liquibase-core/5.0.1/liquibase-core-5.0.1.jar:/home/cupuyc/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/home/cupuyc/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-text/1.14.0/commons-text-1.14.0.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar:/home/cupuyc/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/cupuyc/.m2/repository/org/testcontainers/testcontainers/2.0.3/testcontainers-2.0.3.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/home/cupuyc/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/home/cupuyc/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/cupuyc/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-api/3.7.0/docker-java-api-3.7.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.7.0/docker-java-transport-zerodep-3.7.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-transport/3.7.0/docker-java-transport-3.7.0.jar:/home/cupuyc/.m2/repository/net/java/dev/jna/jna/5.18.1/jna-5.18.1.jar:/home/cupuyc/.m2/repository/org/testcontainers/jdbc/1.21.4/jdbc-1.21.4.jar:/home/cupuyc/.m2/repository/org/testcontainers/database-commons/1.21.4/database-commons-1.21.4.jar:/home/cupuyc/.m2/repository/org/testcontainers/postgresql/1.21.4/postgresql-1.21.4.jar:/home/cupuyc/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/cupuyc/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/cupuyc/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/cupuyc/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
+    <property name="java.vm.vendor" value="Red Hat, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://www.redhat.com/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk/lib"/>
+    <property name="sun.java.command" value="/home/cupuyc/IdeaProjects/FinanceTracker/target/surefire/surefirebooter-20260403190318917_3.jar /home/cupuyc/IdeaProjects/FinanceTracker/target/surefire 2026-04-03T19-03-18_794-jvmRun1 surefire-20260403190318917_1tmp surefire_0-20260403190318917_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/cupuyc/IdeaProjects/FinanceTracker/target/test-classes:/home/cupuyc/IdeaProjects/FinanceTracker/target/classes:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.1/jackson-core-2.21.1.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.1/jackson-databind-2.21.1.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.1/jackson-datatype-jsr310-2.21.1.jar:/home/cupuyc/.m2/repository/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar:/home/cupuyc/.m2/repository/org/aspectj/aspectjrt/1.9.23/aspectjrt-1.9.23.jar:/home/cupuyc/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/cupuyc/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.1.0/jakarta.servlet-api-6.1.0.jar:/home/cupuyc/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/4.0.0/jakarta.ws.rs-api-4.0.0.jar:/home/cupuyc/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/cupuyc/.m2/repository/org/yaml/snakeyaml/2.5/snakeyaml-2.5.jar:/home/cupuyc/.m2/repository/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar:/home/cupuyc/.m2/repository/org/checkerframework/checker-qual/3.49.5/checker-qual-3.49.5.jar:/home/cupuyc/.m2/repository/org/mockito/mockito-core/5.21.0/mockito-core-5.21.0.jar:/home/cupuyc/.m2/repository/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar:/home/cupuyc/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar:/home/cupuyc/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/cupuyc/.m2/repository/org/liquibase/liquibase-core/5.0.1/liquibase-core-5.0.1.jar:/home/cupuyc/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/home/cupuyc/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-text/1.14.0/commons-text-1.14.0.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar:/home/cupuyc/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/cupuyc/.m2/repository/org/testcontainers/testcontainers/2.0.3/testcontainers-2.0.3.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/home/cupuyc/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/home/cupuyc/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/cupuyc/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-api/3.7.0/docker-java-api-3.7.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.7.0/docker-java-transport-zerodep-3.7.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-transport/3.7.0/docker-java-transport-3.7.0.jar:/home/cupuyc/.m2/repository/net/java/dev/jna/jna/5.18.1/jna-5.18.1.jar:/home/cupuyc/.m2/repository/org/testcontainers/jdbc/1.21.4/jdbc-1.21.4.jar:/home/cupuyc/.m2/repository/org/testcontainers/database-commons/1.21.4/database-commons-1.21.4.jar:/home/cupuyc/.m2/repository/org/testcontainers/postgresql/1.21.4/postgresql-1.21.4.jar:/home/cupuyc/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/cupuyc/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/cupuyc/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/cupuyc/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/cupuyc"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/cupuyc/IdeaProjects/FinanceTracker"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/cupuyc/IdeaProjects/FinanceTracker/target/surefire/surefirebooter-20260403190318917_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.10+7"/>
+    <property name="user.name" value="cupuyc"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.19.10-200.fc43.x86_64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="(Red_Hat-21.0.10.0.7-2)"/>
+    <property name="localRepository" value="/home/cupuyc/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=java-21-openjdk&amp;version=42"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.10"/>
+    <property name="user.dir" value="/home/cupuyc/IdeaProjects/FinanceTracker"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Red Hat, Inc."/>
+    <property name="java.vm.version" value="21.0.10+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="givenCurrentUser_whenTryToGetSummary_thenReturnBadRequest" classname="org.example.servlet.AnalyticsServletTest" time="1.622">
+    <system-out><![CDATA[execution(UserRepository org.example.repository.UserRepository.getInstance()) -> 1 ms
+execution(TransactionRepository org.example.repository.TransactionRepository.getInstance()) -> 17 ms
+execution(UserRepository org.example.repository.UserRepository.getInstance()) -> 0 ms
+execution(LimitRepository org.example.repository.LimitRepository.getInstance()) -> 0 ms
+execution(UserRepository org.example.repository.UserRepository.getInstance()) -> 0 ms
+execution(FundRepository org.example.repository.FundRepository.getInstance()) -> 0 ms
+execution(AnalyticsService org.example.service.AnalyticsService.getInstance()) -> 0 ms
+execution(ApplicationProperties org.example.property.ApplicationProperties.getInstance()) -> 77 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 1 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 1 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(PostgreSQLClient org.example.client.PostgreSQLClient.getInstance()) -> 105 ms
+execution(PGConnectionPoolDataSource org.example.client.PostgreSQLClient.getDataSource()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(RoleType[] org.example.entity.RoleType.$values()) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType[] org.example.entity.StatusType.$values()) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType[] org.example.entity.RoleType.values()) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType[] org.example.entity.StatusType.values()) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 365 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 365 ms
+execution(TransactionType[] org.example.entity.TransactionType.$values()) -> 0 ms
+execution(TransactionType[] org.example.entity.TransactionType.values()) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 6 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 408 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 409 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$static$0(Transaction, Map.Entry)) -> 1 ms
+execution(Boolean org.example.service.AnalyticsService.lambda$total$1(Transaction, Map.Entry)) -> 1 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 2 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 414 ms
+execution(BigDecimal org.example.service.AnalyticsService.outcome(Long, Map.Entry)) -> 414 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 31 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 31 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 1 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 61 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 61 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$income$4(Transaction)) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$static$0(Transaction, Map.Entry)) -> 0 ms
+execution(Boolean org.example.service.AnalyticsService.lambda$total$1(Transaction, Map.Entry)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 1 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$income$4(Transaction)) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 67 ms
+execution(BigDecimal org.example.service.AnalyticsService.income(Long, Map.Entry)) -> 68 ms
+execution(String org.example.service.AnalyticsService.lambda$summary$9(Map.Entry)) -> 14 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$8(String[], String[])) -> 15 ms
+execution(String org.example.service.AnalyticsService.summary(Map.Entry)) -> 522 ms
+execution(AnalyticsService org.example.service.AnalyticsService.getInstance()) -> 0 ms
+execution(UserRepository org.example.repository.UserRepository.getInstance()) -> 0 ms
+execution(UserService org.example.service.UserService.getInstance()) -> 2 ms
+execution(AnalyticsServlet org.example.web.servlet.AnalyticsServlet.getInstance()) -> 8 ms
+execution(UserService org.example.service.UserService.getInstance()) -> 0 ms
+execution(UserRepository org.example.repository.UserRepository.getInstance()) -> 0 ms
+execution(InvocationRepository org.example.repository.InvocationRepository.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 26 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 27 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 27 ms
+execution(void org.example.entity.Invocation.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Invocation.setEndpoint(String)) -> 0 ms
+execution(void org.example.entity.Invocation.setUser(User)) -> 0 ms
+execution(Instant org.example.entity.Invocation.getDate()) -> 0 ms
+execution(String org.example.entity.Invocation.getEndpoint()) -> 0 ms
+execution(User org.example.entity.Invocation.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Invocation org.example.repository.InvocationRepository.lambda$add$1(Invocation)) -> 30 ms
+execution(Invocation org.example.repository.InvocationRepository.add(Invocation)) -> 31 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 14 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 14 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.UserDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.User.getName()) -> 0 ms
+execution(void org.example.dto.UserDto.setName(String)) -> 0 ms
+execution(String org.example.entity.User.getEmail()) -> 0 ms
+execution(void org.example.dto.UserDto.setEmail(String)) -> 0 ms
+execution(String org.example.entity.User.getPassword()) -> 0 ms
+execution(void org.example.dto.UserDto.setPassword(String)) -> 0 ms
+execution(RoleType org.example.entity.User.getRole()) -> 0 ms
+execution(void org.example.dto.UserDto.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.User.getStatus()) -> 0 ms
+execution(void org.example.dto.UserDto.setStatus(StatusType)) -> 0 ms
+execution(UserDto org.example.service.UserService.findByEmail(String)) -> 22 ms
+execution(Long org.example.dto.UserDto.getUserId()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 26 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 26 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 1 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 56 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 56 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$static$0(Transaction, Map.Entry)) -> 0 ms
+execution(Boolean org.example.service.AnalyticsService.lambda$total$1(Transaction, Map.Entry)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 0 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 58 ms
+execution(BigDecimal org.example.service.AnalyticsService.outcome(Long, Map.Entry)) -> 58 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 16 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 16 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 1 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 1 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 47 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 47 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$income$4(Transaction)) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$static$0(Transaction, Map.Entry)) -> 0 ms
+execution(Boolean org.example.service.AnalyticsService.lambda$total$1(Transaction, Map.Entry)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 0 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$income$4(Transaction)) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 48 ms
+execution(BigDecimal org.example.service.AnalyticsService.income(Long, Map.Entry)) -> 48 ms
+execution(String org.example.service.AnalyticsService.lambda$summary$9(Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$8(String[], String[])) -> 0 ms
+execution(String org.example.service.AnalyticsService.summary(Map.Entry)) -> 106 ms
+execution(void org.example.web.servlet.AnalyticsServlet.lambda$doGet$0(String, HttpServletRequest, PrintWriter, HttpServletResponse, UserDto)) -> 122 ms
+execution(void org.example.web.servlet.AnalyticsServlet.doGet(HttpServletRequest, HttpServletResponse)) -> 225 ms
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="givenCurrentUser_whenTryToGetExpenses_thenReturnBadRequest" classname="org.example.servlet.AnalyticsServletTest" time="0.18">
+    <system-out><![CDATA[execution(AnalyticsService org.example.service.AnalyticsService.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 13 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 13 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 1 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 38 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 38 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$expenses$10(Transaction)) -> 1 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$expenses$10(Transaction)) -> 0 ms
+execution(String org.example.entity.Transaction.getCategory()) -> 0 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$expenses$11(Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$expenses$12(Long)) -> 51 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$8(String[], String[])) -> 1 ms
+execution(String org.example.service.AnalyticsService.expenses(Map.Entry)) -> 53 ms
+execution(AnalyticsServlet org.example.web.servlet.AnalyticsServlet.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 1 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 26 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 26 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 26 ms
+execution(void org.example.entity.Invocation.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Invocation.setEndpoint(String)) -> 0 ms
+execution(void org.example.entity.Invocation.setUser(User)) -> 0 ms
+execution(Instant org.example.entity.Invocation.getDate()) -> 0 ms
+execution(String org.example.entity.Invocation.getEndpoint()) -> 0 ms
+execution(User org.example.entity.Invocation.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Invocation org.example.repository.InvocationRepository.lambda$add$1(Invocation)) -> 31 ms
+execution(Invocation org.example.repository.InvocationRepository.add(Invocation)) -> 31 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 15 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 15 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.UserDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.User.getName()) -> 0 ms
+execution(void org.example.dto.UserDto.setName(String)) -> 0 ms
+execution(String org.example.entity.User.getEmail()) -> 0 ms
+execution(void org.example.dto.UserDto.setEmail(String)) -> 0 ms
+execution(String org.example.entity.User.getPassword()) -> 0 ms
+execution(void org.example.dto.UserDto.setPassword(String)) -> 0 ms
+execution(RoleType org.example.entity.User.getRole()) -> 0 ms
+execution(void org.example.dto.UserDto.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.User.getStatus()) -> 0 ms
+execution(void org.example.dto.UserDto.setStatus(StatusType)) -> 0 ms
+execution(UserDto org.example.service.UserService.findByEmail(String)) -> 16 ms
+execution(Long org.example.dto.UserDto.getUserId()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 13 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 13 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 31 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 31 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$expenses$10(Transaction)) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$expenses$10(Transaction)) -> 0 ms
+execution(String org.example.entity.Transaction.getCategory()) -> 0 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$expenses$11(Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$expenses$12(Long)) -> 32 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$8(String[], String[])) -> 0 ms
+execution(String org.example.service.AnalyticsService.expenses(Map.Entry)) -> 32 ms
+execution(void org.example.web.servlet.AnalyticsServlet.lambda$doGet$0(String, HttpServletRequest, PrintWriter, HttpServletResponse, UserDto)) -> 33 ms
+execution(void org.example.web.servlet.AnalyticsServlet.doGet(HttpServletRequest, HttpServletResponse)) -> 111 ms
+]]></system-out>
+  </testcase>
+  <testcase name="givenCurrentUser_whenTryToGetCondition_thenReturnBadRequest" classname="org.example.servlet.AnalyticsServletTest" time="0.426">
+    <system-out><![CDATA[execution(AnalyticsService org.example.service.AnalyticsService.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 41 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 41 ms
+execution(Limit org.example.repository.LimitRepository.lambda$getByMonthAndUserId$8(Long, User, YearMonth)) -> 19 ms
+execution(Optional org.example.repository.LimitRepository.lambda$getByMonthAndUserId$9(YearMonth, Long)) -> 61 ms
+execution(Optional org.example.repository.LimitRepository.getByMonthAndUserId(YearMonth, Long)) -> 63 ms
+execution(Optional org.example.service.AnalyticsService.lambda$unspent$5(YearMonth, Long)) -> 63 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 28 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 28 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 1 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 47 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 48 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$static$0(Transaction, Map.Entry)) -> 0 ms
+execution(Boolean org.example.service.AnalyticsService.lambda$total$1(Transaction, Map.Entry)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 49 ms
+execution(BigDecimal org.example.service.AnalyticsService.outcome(Long, Map.Entry)) -> 49 ms
+execution(BigDecimal org.example.service.AnalyticsService.unspent(Long, YearMonth)) -> 118 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 19 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 19 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAllByUserId$11(ResultSet, User)) -> 4 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAllByUserId$11(ResultSet, User)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAllByUserId$11(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.FundRepository.lambda$getAllByUserId$12(Long)) -> 38 ms
+execution(Collection org.example.repository.FundRepository.getAllByUserId(Long)) -> 39 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.savings(Long)) -> 43 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$8(String[], String[])) -> 0 ms
+execution(String org.example.service.AnalyticsService.condition(Map.Entry)) -> 164 ms
+execution(AnalyticsServlet org.example.web.servlet.AnalyticsServlet.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 1 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 53 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 53 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 56 ms
+execution(void org.example.entity.Invocation.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Invocation.setEndpoint(String)) -> 0 ms
+execution(void org.example.entity.Invocation.setUser(User)) -> 0 ms
+execution(Instant org.example.entity.Invocation.getDate()) -> 0 ms
+execution(String org.example.entity.Invocation.getEndpoint()) -> 0 ms
+execution(User org.example.entity.Invocation.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Invocation org.example.repository.InvocationRepository.lambda$add$1(Invocation)) -> 31 ms
+execution(Invocation org.example.repository.InvocationRepository.add(Invocation)) -> 31 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 20 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 20 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.UserDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.User.getName()) -> 0 ms
+execution(void org.example.dto.UserDto.setName(String)) -> 0 ms
+execution(String org.example.entity.User.getEmail()) -> 0 ms
+execution(void org.example.dto.UserDto.setEmail(String)) -> 0 ms
+execution(String org.example.entity.User.getPassword()) -> 0 ms
+execution(void org.example.dto.UserDto.setPassword(String)) -> 0 ms
+execution(RoleType org.example.entity.User.getRole()) -> 0 ms
+execution(void org.example.dto.UserDto.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.User.getStatus()) -> 0 ms
+execution(void org.example.dto.UserDto.setStatus(StatusType)) -> 0 ms
+execution(UserDto org.example.service.UserService.findByEmail(String)) -> 22 ms
+execution(Long org.example.dto.UserDto.getUserId()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 21 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 21 ms
+execution(Limit org.example.repository.LimitRepository.lambda$getByMonthAndUserId$8(Long, User, YearMonth)) -> 15 ms
+execution(Optional org.example.repository.LimitRepository.lambda$getByMonthAndUserId$9(YearMonth, Long)) -> 39 ms
+execution(Optional org.example.repository.LimitRepository.getByMonthAndUserId(YearMonth, Long)) -> 40 ms
+execution(Optional org.example.service.AnalyticsService.lambda$unspent$5(YearMonth, Long)) -> 40 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 12 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 12 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 36 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 37 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(Instant org.example.entity.Transaction.getDate()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$static$0(Transaction, Map.Entry)) -> 0 ms
+execution(Boolean org.example.service.AnalyticsService.lambda$total$1(Transaction, Map.Entry)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 37 ms
+execution(BigDecimal org.example.service.AnalyticsService.outcome(Long, Map.Entry)) -> 37 ms
+execution(BigDecimal org.example.service.AnalyticsService.unspent(Long, YearMonth)) -> 77 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 34 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 34 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAllByUserId$11(ResultSet, User)) -> 0 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAllByUserId$11(ResultSet, User)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAllByUserId$11(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.FundRepository.lambda$getAllByUserId$12(Long)) -> 48 ms
+execution(Collection org.example.repository.FundRepository.getAllByUserId(Long)) -> 48 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.savings(Long)) -> 49 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$8(String[], String[])) -> 0 ms
+execution(String org.example.service.AnalyticsService.condition(Map.Entry)) -> 127 ms
+execution(void org.example.web.servlet.AnalyticsServlet.lambda$doGet$0(String, HttpServletRequest, PrintWriter, HttpServletResponse, UserDto)) -> 128 ms
+execution(void org.example.web.servlet.AnalyticsServlet.doGet(HttpServletRequest, HttpServletResponse)) -> 243 ms
+]]></system-out>
+  </testcase>
+  <testcase name="givenCurrentUser_whenTryToGetBalance_thenReturnBadRequest" classname="org.example.servlet.AnalyticsServletTest" time="0.276">
+    <system-out><![CDATA[execution(AnalyticsService org.example.service.AnalyticsService.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 14 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 14 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 40 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 40 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 0 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 40 ms
+execution(BigDecimal org.example.service.AnalyticsService.outcome(Long, Map.Entry)) -> 40 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 21 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 22 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 58 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 58 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$income$4(Transaction)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 0 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$income$4(Transaction)) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 59 ms
+execution(BigDecimal org.example.service.AnalyticsService.income(Long, Map.Entry)) -> 59 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$8(String[], String[])) -> 0 ms
+execution(String org.example.service.AnalyticsService.balance(Map.Entry)) -> 100 ms
+execution(AnalyticsServlet org.example.web.servlet.AnalyticsServlet.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 11 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 11 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 11 ms
+execution(void org.example.entity.Invocation.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Invocation.setEndpoint(String)) -> 0 ms
+execution(void org.example.entity.Invocation.setUser(User)) -> 0 ms
+execution(Instant org.example.entity.Invocation.getDate()) -> 0 ms
+execution(String org.example.entity.Invocation.getEndpoint()) -> 0 ms
+execution(User org.example.entity.Invocation.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Invocation org.example.repository.InvocationRepository.lambda$add$1(Invocation)) -> 25 ms
+execution(Invocation org.example.repository.InvocationRepository.add(Invocation)) -> 26 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 23 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 23 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.UserDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.User.getName()) -> 0 ms
+execution(void org.example.dto.UserDto.setName(String)) -> 0 ms
+execution(String org.example.entity.User.getEmail()) -> 0 ms
+execution(void org.example.dto.UserDto.setEmail(String)) -> 0 ms
+execution(String org.example.entity.User.getPassword()) -> 0 ms
+execution(void org.example.dto.UserDto.setPassword(String)) -> 0 ms
+execution(RoleType org.example.entity.User.getRole()) -> 0 ms
+execution(void org.example.dto.UserDto.setRole(RoleType)) -> 2 ms
+execution(StatusType org.example.entity.User.getStatus()) -> 0 ms
+execution(void org.example.dto.UserDto.setStatus(StatusType)) -> 0 ms
+execution(UserDto org.example.service.UserService.findByEmail(String)) -> 26 ms
+execution(Long org.example.dto.UserDto.getUserId()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 15 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 15 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 35 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 35 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$outcome$3(Transaction)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 0 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 35 ms
+execution(BigDecimal org.example.service.AnalyticsService.outcome(Long, Map.Entry)) -> 35 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 31 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 31 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(TransactionType org.example.entity.TransactionType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Transaction.setType(TransactionType)) -> 0 ms
+execution(void org.example.entity.Transaction.setCategory(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setAmount(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Transaction.setDescription(String)) -> 0 ms
+execution(void org.example.entity.Transaction.setUser(User)) -> 0 ms
+execution(void org.example.entity.Transaction.setId(long)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(Transaction org.example.repository.TransactionRepository.lambda$getAllByUserId$10(ResultSet, User)) -> 0 ms
+execution(List org.example.repository.TransactionRepository.lambda$getAllByUserId$11(Long)) -> 55 ms
+execution(Collection org.example.repository.TransactionRepository.getAllByUserId(Long)) -> 55 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$income$4(Transaction)) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$total$2(Map.Entry, Transaction)) -> 0 ms
+execution(BigDecimal org.example.entity.Transaction.getAmount()) -> 0 ms
+execution(TransactionType org.example.entity.Transaction.getType()) -> 0 ms
+execution(boolean org.example.service.AnalyticsService.lambda$income$4(Transaction)) -> 0 ms
+execution(BigDecimal org.example.service.AnalyticsService.total(Long, Map.Entry, Predicate)) -> 56 ms
+execution(BigDecimal org.example.service.AnalyticsService.income(Long, Map.Entry)) -> 56 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(Map.Entry org.example.service.AnalyticsService.lambda$static$6(String[], int)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$7(String[], String[], Map.Entry)) -> 0 ms
+execution(String org.example.service.AnalyticsService.lambda$static$8(String[], String[])) -> 0 ms
+execution(String org.example.service.AnalyticsService.balance(Map.Entry)) -> 91 ms
+execution(void org.example.web.servlet.AnalyticsServlet.lambda$doGet$0(String, HttpServletRequest, PrintWriter, HttpServletResponse, UserDto)) -> 92 ms
+execution(void org.example.web.servlet.AnalyticsServlet.doGet(HttpServletRequest, HttpServletResponse)) -> 159 ms
+]]></system-out>
+  </testcase>
+</testsuite>

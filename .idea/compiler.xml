@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AjcSettings">
+    <option name="ajcPath" value="$MAVEN_REPOSITORY$/org/aspectj/aspectjtools/1.9.23/aspectjtools-1.9.23.jar" />
+    <option name="cmdLineParams" value="-Xlint:ignore" />
+    <option name="delegateToJavac" value="true" />
+    <option name="aptOptionsEnabled" value="true" />
+  </component>
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="ajc" />
+    <annotationProcessing>
+      <profile default="true" name="Default" procOnly="true" />
+      <profile name="Annotation profile for FinanceTracker" enabled="true">
+        <sourceOutputDir name="../generated-sources/annotations" />
+        <sourceTestOutputDir name="../generated-test-sources/test-annotations" />
+        <option name="mapstruct.defaultComponentModel" value="jsr330" />
+        <option name="mapstruct.verbose" value="false" />
+        <processor name="org.mapstruct.ap.MappingProcessor" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.3/mapstruct-processor-1.6.3.jar" />
+        </processorPath>
+        <module name="FinanceTracker.main" />
+        <module name="FinanceTracker.test" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="FinanceTracker" options="-Amapstruct.defaultComponentModel=jsr330 -Amapstruct.verbose=false" />
+      <module name="FinanceTracker.main" options="-Amapstruct.defaultComponentModel=jsr330 -Amapstruct.verbose=false" />
+    </option>
+  </component>
+</project>

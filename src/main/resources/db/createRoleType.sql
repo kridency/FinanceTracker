@@ -1,0 +1,2 @@
+DROP TYPE IF EXISTS role_type;
+CREATE TYPE role_type AS ENUM ('USER','ADMIN');

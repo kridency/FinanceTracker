@@ -1,0 +1,2038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.servlet.FundServletTest" time="11.203" tests="4" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/cupuyc/IdeaProjects/FinanceTracker/target/test-classes:/home/cupuyc/IdeaProjects/FinanceTracker/target/classes:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.1/jackson-core-2.21.1.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.1/jackson-databind-2.21.1.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.1/jackson-datatype-jsr310-2.21.1.jar:/home/cupuyc/.m2/repository/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar:/home/cupuyc/.m2/repository/org/aspectj/aspectjrt/1.9.23/aspectjrt-1.9.23.jar:/home/cupuyc/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/cupuyc/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.1.0/jakarta.servlet-api-6.1.0.jar:/home/cupuyc/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/4.0.0/jakarta.ws.rs-api-4.0.0.jar:/home/cupuyc/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/cupuyc/.m2/repository/org/yaml/snakeyaml/2.5/snakeyaml-2.5.jar:/home/cupuyc/.m2/repository/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar:/home/cupuyc/.m2/repository/org/checkerframework/checker-qual/3.49.5/checker-qual-3.49.5.jar:/home/cupuyc/.m2/repository/org/mockito/mockito-core/5.21.0/mockito-core-5.21.0.jar:/home/cupuyc/.m2/repository/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar:/home/cupuyc/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar:/home/cupuyc/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/cupuyc/.m2/repository/org/liquibase/liquibase-core/5.0.1/liquibase-core-5.0.1.jar:/home/cupuyc/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/home/cupuyc/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-text/1.14.0/commons-text-1.14.0.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar:/home/cupuyc/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/cupuyc/.m2/repository/org/testcontainers/testcontainers/2.0.3/testcontainers-2.0.3.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/home/cupuyc/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/home/cupuyc/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/cupuyc/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-api/3.7.0/docker-java-api-3.7.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.7.0/docker-java-transport-zerodep-3.7.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-transport/3.7.0/docker-java-transport-3.7.0.jar:/home/cupuyc/.m2/repository/net/java/dev/jna/jna/5.18.1/jna-5.18.1.jar:/home/cupuyc/.m2/repository/org/testcontainers/jdbc/1.21.4/jdbc-1.21.4.jar:/home/cupuyc/.m2/repository/org/testcontainers/database-commons/1.21.4/database-commons-1.21.4.jar:/home/cupuyc/.m2/repository/org/testcontainers/postgresql/1.21.4/postgresql-1.21.4.jar:/home/cupuyc/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/cupuyc/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/cupuyc/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/cupuyc/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
+    <property name="java.vm.vendor" value="Red Hat, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://www.redhat.com/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk/lib"/>
+    <property name="sun.java.command" value="/home/cupuyc/IdeaProjects/FinanceTracker/target/surefire/surefirebooter-20260403190318917_3.jar /home/cupuyc/IdeaProjects/FinanceTracker/target/surefire 2026-04-03T19-03-18_794-jvmRun1 surefire-20260403190318917_1tmp surefire_0-20260403190318917_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/cupuyc/IdeaProjects/FinanceTracker/target/test-classes:/home/cupuyc/IdeaProjects/FinanceTracker/target/classes:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.1/jackson-core-2.21.1.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.1/jackson-databind-2.21.1.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/home/cupuyc/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.1/jackson-datatype-jsr310-2.21.1.jar:/home/cupuyc/.m2/repository/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar:/home/cupuyc/.m2/repository/org/aspectj/aspectjrt/1.9.23/aspectjrt-1.9.23.jar:/home/cupuyc/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/cupuyc/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.1.0/jakarta.servlet-api-6.1.0.jar:/home/cupuyc/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/4.0.0/jakarta.ws.rs-api-4.0.0.jar:/home/cupuyc/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/cupuyc/.m2/repository/org/yaml/snakeyaml/2.5/snakeyaml-2.5.jar:/home/cupuyc/.m2/repository/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar:/home/cupuyc/.m2/repository/org/checkerframework/checker-qual/3.49.5/checker-qual-3.49.5.jar:/home/cupuyc/.m2/repository/org/mockito/mockito-core/5.21.0/mockito-core-5.21.0.jar:/home/cupuyc/.m2/repository/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar:/home/cupuyc/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar:/home/cupuyc/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/cupuyc/.m2/repository/org/liquibase/liquibase-core/5.0.1/liquibase-core-5.0.1.jar:/home/cupuyc/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/home/cupuyc/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-text/1.14.0/commons-text-1.14.0.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar:/home/cupuyc/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/cupuyc/.m2/repository/org/testcontainers/testcontainers/2.0.3/testcontainers-2.0.3.jar:/home/cupuyc/.m2/repository/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/home/cupuyc/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/home/cupuyc/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/cupuyc/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-api/3.7.0/docker-java-api-3.7.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.7.0/docker-java-transport-zerodep-3.7.0.jar:/home/cupuyc/.m2/repository/com/github/docker-java/docker-java-transport/3.7.0/docker-java-transport-3.7.0.jar:/home/cupuyc/.m2/repository/net/java/dev/jna/jna/5.18.1/jna-5.18.1.jar:/home/cupuyc/.m2/repository/org/testcontainers/jdbc/1.21.4/jdbc-1.21.4.jar:/home/cupuyc/.m2/repository/org/testcontainers/database-commons/1.21.4/database-commons-1.21.4.jar:/home/cupuyc/.m2/repository/org/testcontainers/postgresql/1.21.4/postgresql-1.21.4.jar:/home/cupuyc/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/cupuyc/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/cupuyc/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/cupuyc/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/cupuyc"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/cupuyc/IdeaProjects/FinanceTracker"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/cupuyc/IdeaProjects/FinanceTracker/target/surefire/surefirebooter-20260403190318917_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.10+7"/>
+    <property name="user.name" value="cupuyc"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.19.10-200.fc43.x86_64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="(Red_Hat-21.0.10.0.7-2)"/>
+    <property name="localRepository" value="/home/cupuyc/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=java-21-openjdk&amp;version=42"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.10"/>
+    <property name="user.dir" value="/home/cupuyc/IdeaProjects/FinanceTracker"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Red Hat, Inc."/>
+    <property name="java.vm.version" value="21.0.10+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="givenUserAndFundDto_whenTryToUpdate_thenReturnCorrectResult" classname="org.example.servlet.FundServletTest" time="0.359">
+    <system-out><![CDATA[execution(ApplicationProperties org.example.property.ApplicationProperties.getInstance()) -> 0 ms
+execution(LiquibaseProperties org.example.property.LiquibaseProperties.getInstance()) -> 14 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(PostgreSQLClient org.example.client.PostgreSQLClient.getInstance()) -> 0 ms
+execution(PGConnectionPoolDataSource org.example.client.PostgreSQLClient.getDataSource()) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(UserService org.example.service.UserService.getInstance()) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 0 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 0 ms
+execution(Object org.example.property.AbstractProperties.flatten(Object, String)) -> 0 ms
+execution(String org.example.property.AbstractProperties.lambda$getProperty$0(String, Map)) -> 9 ms
+execution(String org.example.property.AbstractProperties.getProperty(String)) -> 9 ms
+INFO: The drop-all command may result in unrecoverable destructive changes to objects at 'jdbc:postgresql://localhost:32773/tracker_db?adaptiveFetch=false&adaptiveFetchMaximum=-1&adaptiveFetchMinimum=0&allowEncodingChanges=false&ApplicationName=PostgreSQL+JDBC+Driver&autosave=never&binaryTransfer=true&binaryTransferDisable=&binaryTransferEnable=&cancelSignalTimeout=10&channelBinding=prefer&cleanupSavepoints=false&connectTimeout=10&convertBooleanToNumeric=false&currentSchema=custom&databaseMetadataCacheFields=65536&databaseMetadataCacheFieldsMiB=5&defaultRowFetchSize=0&disableColumnSanitiser=false&escapeSyntaxCallMode=select&groupStartupParameters=false&gssEncMode=allow&gsslib=auto&gssResponseTimeout=5000&gssUseDefaultCreds=false&hideUnprivilegedObjects=false&hostRecheckSeconds=10&jaasApplicationName=pgjdbc&jaasLogin=true&loadBalanceHosts=false&loginTimeout=0&logServerErrorDetail=true&logUnclosedConnections=false&maxSendBufferSize=8192&options=&preferQueryMode=extended&preparedStatementCacheQueries=256&preparedStatementCacheSizeMiB=5&prepareThreshold=5&protocolVersion=3&quoteReturningIdentifiers=true&readOnly=false&readOnlyMode=transaction&receiveBufferSize=-1&reWriteBatchedInserts=false&sendBufferSize=-1&socketTimeout=0&sslfactory=org.postgresql.ssl.LibPQFactory&sslNegotiation=postgres&sslResponseTimeout=5000&sspiServiceClass=POSTGRES&stringtype=unspecified&targetServerType=any&tcpKeepAlive=false&tcpNoDelay=true&unknownLength=2147483647&useSpnego=false&xmlFactoryFactory='.
+To protect against unwanted drops, set --requireForce=true, which will require a --force=true flag on the command.
+Learn more at https://docs.liquibase.com/dropall.
+
+All objects dropped from intern@jdbc:postgresql://localhost:32773/tracker_db?adaptiveFetch=false&adaptiveFetchMaximum=-1&adaptiveFetchMinimum=0&allowEncodingChanges=false&ApplicationName=PostgreSQL+JDBC+Driver&autosave=never&binaryTransfer=true&binaryTransferDisable=&binaryTransferEnable=&cancelSignalTimeout=10&channelBinding=prefer&cleanupSavepoints=false&connectTimeout=10&convertBooleanToNumeric=false&currentSchema=custom&databaseMetadataCacheFields=65536&databaseMetadataCacheFieldsMiB=5&defaultRowFetchSize=0&disableColumnSanitiser=false&escapeSyntaxCallMode=select&groupStartupParameters=false&gssEncMode=allow&gsslib=auto&gssResponseTimeout=5000&gssUseDefaultCreds=false&hideUnprivilegedObjects=false&hostRecheckSeconds=10&jaasApplicationName=pgjdbc&jaasLogin=true&loadBalanceHosts=false&loginTimeout=0&logServerErrorDetail=true&logUnclosedConnections=false&maxSendBufferSize=8192&options=&preferQueryMode=extended&preparedStatementCacheQueries=256&preparedStatementCacheSizeMiB=5&prepareThreshold=5&protocolVersion=3&quoteReturningIdentifiers=true&readOnly=false&readOnlyMode=transaction&receiveBufferSize=-1&reWriteBatchedInserts=false&sendBufferSize=-1&socketTimeout=0&sslfactory=org.postgresql.ssl.LibPQFactory&sslNegotiation=postgres&sslResponseTimeout=5000&sspiServiceClass=POSTGRES&stringtype=unspecified&targetServerType=any&tcpKeepAlive=false&tcpNoDelay=true&unknownLength=2147483647&useSpnego=false&xmlFactoryFactory=
+Running Changeset: db/changelog/dbchangelog.xml::create_schema::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_sequence::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_role_type::kridency
+type "role_type" does not exist, skipping
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_status_type::kridency
+type "status_type" does not exist, skipping
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_transaction_type::kridency
+type "transaction_type" does not exist, skipping
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_user_table::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_user_index::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_transaction_table::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_transaction_constraint::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_transaction_index::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_transaction_foreign_key::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_invocation_table::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_invocation_constraint::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_invocation_index::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_invocation_foreign_key::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_fund_table::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_fund_constraint::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_fund_index::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_fund_foreign_key::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_limit_table::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_limit_constraint::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_limit_index::kridency
+Running Changeset: db/changelog/changes/changelog1_structure.xml::create_limit_foreign_key::kridency
+Running Changeset: db/changelog/changes/changelog2_data.xml::create_users::kridency
+Running Changeset: db/changelog/changes/changelog2_data.xml::create_transactions::kridency
+Running Changeset: db/changelog/changes/changelog2_data.xml::create_limits::kridency
+Running Changeset: db/changelog/changes/changelog2_data.xml::create_funds::kridency
+
+UPDATE SUMMARY
+Run:                         27
+Previously run:               0
+Filtered out:                 0
+-------------------------------
+Total change sets:           27
+
+Liquibase: Update has been successful. Rows affected: 9
+execution(UserRepository org.example.repository.UserRepository.getInstance()) -> 0 ms
+execution(FundRepository org.example.repository.FundRepository.getInstance()) -> 0 ms
+execution(FundService org.example.service.FundService.getInstance()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 14 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 14 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 14 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(UserService org.example.service.UserService.getInstance()) -> 0 ms
+execution(FundService org.example.service.FundService.getInstance()) -> 0 ms
+execution(FundServlet org.example.web.servlet.FundServlet.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 20 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 20 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 20 ms
+execution(void org.example.entity.Invocation.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Invocation.setEndpoint(String)) -> 0 ms
+execution(void org.example.entity.Invocation.setUser(User)) -> 0 ms
+execution(Instant org.example.entity.Invocation.getDate()) -> 0 ms
+execution(String org.example.entity.Invocation.getEndpoint()) -> 0 ms
+execution(User org.example.entity.Invocation.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Invocation org.example.repository.InvocationRepository.lambda$add$1(Invocation)) -> 20 ms
+execution(Invocation org.example.repository.InvocationRepository.add(Invocation)) -> 20 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 30 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 30 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.UserDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.User.getName()) -> 0 ms
+execution(void org.example.dto.UserDto.setName(String)) -> 0 ms
+execution(String org.example.entity.User.getEmail()) -> 0 ms
+execution(void org.example.dto.UserDto.setEmail(String)) -> 0 ms
+execution(String org.example.entity.User.getPassword()) -> 0 ms
+execution(void org.example.dto.UserDto.setPassword(String)) -> 0 ms
+execution(RoleType org.example.entity.User.getRole()) -> 0 ms
+execution(void org.example.dto.UserDto.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.User.getStatus()) -> 0 ms
+execution(void org.example.dto.UserDto.setStatus(StatusType)) -> 0 ms
+execution(UserDto org.example.service.UserService.findByEmail(String)) -> 30 ms
+execution(String org.example.dto.UserDto.getEmail()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 18 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 18 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 18 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.web.servlet.AbstractServlet.lambda$execute$1(AbstractDto, User)) -> 0 ms
+execution(EndPoint[] org.example.entity.EndPoint.$values()) -> 0 ms
+execution(EndPoint[] org.example.entity.EndPoint.values()) -> 0 ms
+execution(EndPoint[] org.example.entity.EndPoint.values()) -> 0 ms
+execution(EndPoint org.example.entity.EndPoint.fromString(String)) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 20 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 20 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getByTitleAndUserId$8(String, Long, User, String)) -> 34 ms
+execution(Optional org.example.repository.FundRepository.lambda$getByTitleAndUserId$9(String, Long, Long)) -> 55 ms
+execution(Optional org.example.repository.FundRepository.getByTitleAndUserId(String, Long)) -> 56 ms
+execution(long org.example.entity.Fund.getId()) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(long org.example.entity.Fund.getId()) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$update$3(Fund)) -> 16 ms
+execution(Fund org.example.repository.FundRepository.update(Fund)) -> 17 ms
+execution(Fund org.example.service.FundService.lambda$update$3(FundDto, Fund)) -> 75 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(FundDto org.example.service.FundService.update(FundDto)) -> 77 ms
+execution(String org.example.dto.FundDto.name()) -> 0 ms
+execution(int org.example.web.servlet.AbstractServlet.update(PrintWriter, AbstractDto)) -> 77 ms
+execution(void org.example.web.servlet.AbstractServlet.lambda$execute$2(HttpServletRequest, AbstractDto, HttpServletResponse, PrintWriter, UserDto)) -> 103 ms
+execution(void org.example.web.servlet.AbstractServlet.execute(HttpServletRequest, HttpServletResponse, AbstractDto)) -> 136 ms
+execution(void org.example.web.servlet.FundServlet.process(HttpServletRequest, HttpServletResponse, String)) -> 198 ms
+execution(void org.example.web.servlet.AbstractServlet.doPut(HttpServletRequest, HttpServletResponse)) -> 241 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+]]></system-out>
+    <system-err><![CDATA[Apr 03, 2026 7:03:30 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:31 PM liquibase.lockservice
+INFO: Successfully acquired change log lock
+Apr 03, 2026 7:03:31 PM liquibase.command
+INFO: Dropping Database Objects in schema: tracker_db.custom
+Apr 03, 2026 7:03:31 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:31 PM liquibase.snapshot
+WARNING: Did not find schema 'tracker_db.custom' to snapshot
+Apr 03, 2026 7:03:31 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:31 PM liquibase.database
+INFO: Successfully deleted all supported object types in schema tracker_db.custom.
+Apr 03, 2026 7:03:31 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:31 PM liquibase.lockservice
+WARNING: Failed to release change log lock
+Apr 03, 2026 7:03:31 PM liquibase.command
+INFO: Command execution complete
+Apr 03, 2026 7:03:32 PM liquibase.changelog
+INFO: Reading resource: db/changelog/changes/changelog1_structure.xml
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Creating database changelog table with name: public.databasechangelog
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Reading from public.databasechangelog
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Reading resource: db/changelog/changes/changelog2_data.xml
+Apr 03, 2026 7:03:33 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:33 PM liquibase.lockservice
+INFO: Successfully acquired change log lock
+Apr 03, 2026 7:03:33 PM liquibase.command
+INFO: Using deploymentId: 5232209456
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Reading from public.databasechangelog
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: SQL in file ../createCustomSchema.sql executed
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/dbchangelog.xml::create_schema::kridency ran successfully in 24ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Sequence id_sequence created
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_sequence::kridency ran successfully in 5ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: SQL in file ../../createRoleType.sql executed
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_role_type::kridency ran successfully in 13ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: SQL in file ../../createStatusType.sql executed
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_status_type::kridency ran successfully in 13ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: SQL in file ../../createTransactionType.sql executed
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_transaction_type::kridency ran successfully in 9ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Table user created
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_user_table::kridency ran successfully in 10ms
+Apr 03, 2026 7:03:33 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Index idx_user_email created
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_user_index::kridency ran successfully in 22ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Table transaction created
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_transaction_table::kridency ran successfully in 23ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Unique constraint added to transaction(date, user_id)
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_transaction_constraint::kridency ran successfully in 10ms
+Apr 03, 2026 7:03:33 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Index idx_transaction_date created
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_transaction_index::kridency ran successfully in 24ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Foreign key constraint added to transaction (user_id)
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_transaction_foreign_key::kridency ran successfully in 7ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Table invocation created
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_invocation_table::kridency ran successfully in 8ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Unique constraint added to invocation(date, user_id)
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_invocation_constraint::kridency ran successfully in 4ms
+Apr 03, 2026 7:03:33 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Index idx_invocation_date created
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_invocation_index::kridency ran successfully in 28ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Foreign key constraint added to invocation (user_id)
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_invocation_foreign_key::kridency ran successfully in 6ms
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: Table fund created
+Apr 03, 2026 7:03:33 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_fund_table::kridency ran successfully in 8ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: Unique constraint added to fund(title, user_id)
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_fund_constraint::kridency ran successfully in 4ms
+Apr 03, 2026 7:03:34 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: Index idx_fund_title created
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_fund_index::kridency ran successfully in 26ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: Foreign key constraint added to fund (user_id)
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_fund_foreign_key::kridency ran successfully in 7ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: Table limit created
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_limit_table::kridency ran successfully in 11ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: Unique constraint added to limit(month, user_id)
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_limit_constraint::kridency ran successfully in 5ms
+Apr 03, 2026 7:03:34 PM liquibase.snapshot
+INFO: Creating snapshot
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: Index idx_limit_month created
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_limit_index::kridency ran successfully in 29ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: Foreign key constraint added to limit (user_id)
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog1_structure.xml::create_limit_foreign_key::kridency ran successfully in 5ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into user
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into user
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into user
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog2_data.xml::create_users::kridency ran successfully in 21ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into transaction
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into transaction
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog2_data.xml::create_transactions::kridency ran successfully in 11ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into limit
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into limit
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog2_data.xml::create_limits::kridency ran successfully in 9ms
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into fund
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: New row inserted into fund
+Apr 03, 2026 7:03:34 PM liquibase.changelog
+INFO: ChangeSet db/changelog/changes/changelog2_data.xml::create_funds::kridency ran successfully in 6ms
+Apr 03, 2026 7:03:34 PM liquibase.util
+INFO: UPDATE SUMMARY
+Apr 03, 2026 7:03:34 PM liquibase.util
+INFO: Run:                         27
+Apr 03, 2026 7:03:34 PM liquibase.util
+INFO: Previously run:               0
+Apr 03, 2026 7:03:34 PM liquibase.util
+INFO: Filtered out:                 0
+Apr 03, 2026 7:03:34 PM liquibase.util
+INFO: -------------------------------
+Apr 03, 2026 7:03:34 PM liquibase.util
+INFO: Total change sets:           27
+Apr 03, 2026 7:03:34 PM liquibase.util
+INFO: Update summary generated
+Apr 03, 2026 7:03:34 PM liquibase.command
+INFO: Update command completed successfully.
+Apr 03, 2026 7:03:34 PM liquibase.lockservice
+INFO: Successfully released change log lock
+Apr 03, 2026 7:03:34 PM liquibase.command
+INFO: Command execution complete
+]]></system-err>
+  </testcase>
+  <testcase name="givenUserAndFundDto_whenTryToCreate_thenReturnCorrectResult" classname="org.example.servlet.FundServletTest" time="0.113">
+    <system-out><![CDATA[execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 17 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 17 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 17 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(FundServlet org.example.web.servlet.FundServlet.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 14 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 14 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 14 ms
+execution(void org.example.entity.Invocation.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Invocation.setEndpoint(String)) -> 0 ms
+execution(void org.example.entity.Invocation.setUser(User)) -> 0 ms
+execution(Instant org.example.entity.Invocation.getDate()) -> 0 ms
+execution(String org.example.entity.Invocation.getEndpoint()) -> 0 ms
+execution(User org.example.entity.Invocation.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Invocation org.example.repository.InvocationRepository.lambda$add$1(Invocation)) -> 11 ms
+execution(Invocation org.example.repository.InvocationRepository.add(Invocation)) -> 11 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 1 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 14 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 14 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.UserDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.User.getName()) -> 0 ms
+execution(void org.example.dto.UserDto.setName(String)) -> 0 ms
+execution(String org.example.entity.User.getEmail()) -> 0 ms
+execution(void org.example.dto.UserDto.setEmail(String)) -> 0 ms
+execution(String org.example.entity.User.getPassword()) -> 0 ms
+execution(void org.example.dto.UserDto.setPassword(String)) -> 0 ms
+execution(RoleType org.example.entity.User.getRole()) -> 0 ms
+execution(void org.example.dto.UserDto.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.User.getStatus()) -> 0 ms
+execution(void org.example.dto.UserDto.setStatus(StatusType)) -> 0 ms
+execution(UserDto org.example.service.UserService.findByEmail(String)) -> 14 ms
+execution(String org.example.dto.UserDto.getEmail()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 12 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 12 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 12 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.web.servlet.AbstractServlet.lambda$execute$1(AbstractDto, User)) -> 0 ms
+execution(EndPoint[] org.example.entity.EndPoint.values()) -> 0 ms
+execution(EndPoint org.example.entity.EndPoint.fromString(String)) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 12 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 12 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$add$1(Fund)) -> 13 ms
+execution(Fund org.example.repository.FundRepository.add(Fund)) -> 14 ms
+execution(Fund org.example.service.FundService.lambda$create$0(FundDto, Fund)) -> 27 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(FundDto org.example.service.FundService.create(FundDto)) -> 29 ms
+execution(String org.example.dto.FundDto.name()) -> 0 ms
+execution(int org.example.web.servlet.AbstractServlet.create(PrintWriter, AbstractDto)) -> 29 ms
+execution(void org.example.web.servlet.AbstractServlet.lambda$execute$2(HttpServletRequest, AbstractDto, HttpServletResponse, PrintWriter, UserDto)) -> 43 ms
+execution(void org.example.web.servlet.AbstractServlet.execute(HttpServletRequest, HttpServletResponse, AbstractDto)) -> 59 ms
+execution(void org.example.web.servlet.FundServlet.process(HttpServletRequest, HttpServletResponse, String)) -> 62 ms
+execution(void org.example.web.servlet.AbstractServlet.doPost(HttpServletRequest, HttpServletResponse)) -> 89 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+]]></system-out>
+  </testcase>
+  <testcase name="givenCurrentUserAndFund_whenTryToList_thenReturnBadRequest" classname="org.example.servlet.FundServletTest" time="0.221">
+    <system-out><![CDATA[execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 12 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 12 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAll$13(ResultSet)) -> 12 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 36 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 36 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAll$13(ResultSet)) -> 37 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 26 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 26 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAll$13(ResultSet)) -> 26 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAll$13(ResultSet)) -> 0 ms
+execution(Collection org.example.repository.FundRepository.getAll()) -> 86 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(Collection org.example.service.FundService.findAll()) -> 87 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(Map org.example.util.Specification.getCriteria()) -> 2 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$3(Map, Object)) -> 1 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$3(Map, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$3(Map, Object)) -> 0 ms
+execution(Collection org.example.util.Specification.apply(Collection)) -> 4 ms
+execution(Collection org.example.service.FundService.findAllByDto(FundDto)) -> 98 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(FundServlet org.example.web.servlet.FundServlet.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 10 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 10 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 10 ms
+execution(void org.example.entity.Invocation.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Invocation.setEndpoint(String)) -> 0 ms
+execution(void org.example.entity.Invocation.setUser(User)) -> 0 ms
+execution(Instant org.example.entity.Invocation.getDate()) -> 0 ms
+execution(String org.example.entity.Invocation.getEndpoint()) -> 0 ms
+execution(User org.example.entity.Invocation.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Invocation org.example.repository.InvocationRepository.lambda$add$1(Invocation)) -> 10 ms
+execution(Invocation org.example.repository.InvocationRepository.add(Invocation)) -> 10 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 9 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 9 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.UserDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.User.getName()) -> 0 ms
+execution(void org.example.dto.UserDto.setName(String)) -> 0 ms
+execution(String org.example.entity.User.getEmail()) -> 0 ms
+execution(void org.example.dto.UserDto.setEmail(String)) -> 0 ms
+execution(String org.example.entity.User.getPassword()) -> 0 ms
+execution(void org.example.dto.UserDto.setPassword(String)) -> 0 ms
+execution(RoleType org.example.entity.User.getRole()) -> 0 ms
+execution(void org.example.dto.UserDto.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.User.getStatus()) -> 0 ms
+execution(void org.example.dto.UserDto.setStatus(StatusType)) -> 0 ms
+execution(UserDto org.example.service.UserService.findByEmail(String)) -> 9 ms
+execution(String org.example.dto.UserDto.getEmail()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 13 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 13 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 13 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.web.servlet.AbstractServlet.lambda$execute$1(AbstractDto, User)) -> 0 ms
+execution(EndPoint[] org.example.entity.EndPoint.values()) -> 0 ms
+execution(EndPoint org.example.entity.EndPoint.fromString(String)) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 9 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 9 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAll$13(ResultSet)) -> 9 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 11 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 11 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAll$13(ResultSet)) -> 12 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 11 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 11 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAll$13(ResultSet)) -> 11 ms
+execution(Fund org.example.repository.FundRepository.lambda$getAll$13(ResultSet)) -> 0 ms
+execution(Collection org.example.repository.FundRepository.getAll()) -> 47 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(Collection org.example.service.FundService.findAll()) -> 47 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$getCriteria$0(Field)) -> 0 ms
+execution(Optional org.example.util.Specification.lambda$getCriteria$1(Field)) -> 0 ms
+execution(Map org.example.util.Specification.getCriteria()) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$3(Map, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$3(Map, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(Object org.example.util.Specification.1.apply(String, Object)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$2(Object, Map.Entry)) -> 0 ms
+execution(boolean org.example.util.Specification.lambda$apply$3(Map, Object)) -> 0 ms
+execution(Collection org.example.util.Specification.apply(Collection)) -> 1 ms
+execution(Collection org.example.service.FundService.findAllByDto(FundDto)) -> 48 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(int org.example.web.servlet.AbstractServlet.list(PrintWriter, AbstractDto)) -> 49 ms
+execution(void org.example.web.servlet.AbstractServlet.lambda$execute$2(HttpServletRequest, AbstractDto, HttpServletResponse, PrintWriter, UserDto)) -> 63 ms
+execution(void org.example.web.servlet.AbstractServlet.execute(HttpServletRequest, HttpServletResponse, AbstractDto)) -> 73 ms
+execution(void org.example.web.servlet.FundServlet.process(HttpServletRequest, HttpServletResponse, String)) -> 76 ms
+execution(void org.example.web.servlet.AbstractServlet.doGet(HttpServletRequest, HttpServletResponse)) -> 98 ms
+]]></system-out>
+  </testcase>
+  <testcase name="givenUserAndFundDto_whenTryToDelete_thenReturnCorrectResult" classname="org.example.servlet.FundServletTest" time="0.121">
+    <system-out><![CDATA[execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 20 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 20 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 20 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(FundServlet org.example.web.servlet.FundServlet.getInstance()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 14 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 14 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 14 ms
+execution(void org.example.entity.Invocation.setDate(Instant)) -> 0 ms
+execution(void org.example.entity.Invocation.setEndpoint(String)) -> 0 ms
+execution(void org.example.entity.Invocation.setUser(User)) -> 0 ms
+execution(Instant org.example.entity.Invocation.getDate()) -> 0 ms
+execution(String org.example.entity.Invocation.getEndpoint()) -> 0 ms
+execution(User org.example.entity.Invocation.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(Invocation org.example.repository.InvocationRepository.lambda$add$1(Invocation)) -> 12 ms
+execution(Invocation org.example.repository.InvocationRepository.add(Invocation)) -> 12 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(boolean org.example.web.listener.RequestStream.isFinished()) -> 0 ms
+execution(int org.example.web.listener.RequestStream.read()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 10 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 10 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.UserDto.setUserId(Long)) -> 0 ms
+execution(String org.example.entity.User.getName()) -> 0 ms
+execution(void org.example.dto.UserDto.setName(String)) -> 0 ms
+execution(String org.example.entity.User.getEmail()) -> 0 ms
+execution(void org.example.dto.UserDto.setEmail(String)) -> 0 ms
+execution(String org.example.entity.User.getPassword()) -> 0 ms
+execution(void org.example.dto.UserDto.setPassword(String)) -> 0 ms
+execution(RoleType org.example.entity.User.getRole()) -> 0 ms
+execution(void org.example.dto.UserDto.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.User.getStatus()) -> 0 ms
+execution(void org.example.dto.UserDto.setStatus(StatusType)) -> 0 ms
+execution(UserDto org.example.service.UserService.findByEmail(String)) -> 11 ms
+execution(String org.example.dto.UserDto.getEmail()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getByEmail$7(String, String)) -> 9 ms
+execution(Optional org.example.repository.UserRepository.getByEmail(String)) -> 9 ms
+execution(User org.example.service.UserService.loadUserByUsername(String)) -> 9 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(void org.example.web.servlet.AbstractServlet.lambda$execute$1(AbstractDto, User)) -> 0 ms
+execution(EndPoint[] org.example.entity.EndPoint.values()) -> 0 ms
+execution(EndPoint org.example.entity.EndPoint.fromString(String)) -> 0 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getTarget()) -> 0 ms
+execution(BigDecimal org.example.dto.FundDto.getSavings()) -> 0 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(Long org.example.dto.FundDto.getUserId()) -> 0 ms
+execution(void org.example.entity.User.setName(String)) -> 0 ms
+execution(void org.example.entity.User.setEmail(String)) -> 0 ms
+execution(void org.example.entity.User.setPassword(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(void org.example.entity.User.setId(long)) -> 0 ms
+execution(RoleType org.example.entity.RoleType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setRole(RoleType)) -> 0 ms
+execution(StatusType org.example.entity.StatusType.valueOf(String)) -> 0 ms
+execution(void org.example.entity.User.setStatus(StatusType)) -> 0 ms
+execution(User org.example.repository.UserRepository.lambda$getById$8(Long)) -> 11 ms
+execution(Optional org.example.repository.UserRepository.getById(Long)) -> 11 ms
+execution(void org.example.entity.Fund.setTitle(String)) -> 0 ms
+execution(void org.example.entity.Fund.setTarget(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setSavings(BigDecimal)) -> 0 ms
+execution(void org.example.entity.Fund.setUser(User)) -> 0 ms
+execution(void org.example.entity.Fund.setId(long)) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$getByTitleAndUserId$8(String, Long, User, String)) -> 13 ms
+execution(Optional org.example.repository.FundRepository.lambda$getByTitleAndUserId$9(String, Long, Long)) -> 24 ms
+execution(Optional org.example.repository.FundRepository.getByTitleAndUserId(String, Long)) -> 24 ms
+execution(long org.example.entity.Fund.getId()) -> 0 ms
+execution(Fund org.example.repository.FundRepository.lambda$delete$5(Fund)) -> 9 ms
+execution(Fund org.example.repository.FundRepository.delete(Fund)) -> 10 ms
+execution(Fund org.example.service.FundService.lambda$remove$6(FundDto, Fund)) -> 35 ms
+execution(String org.example.entity.Fund.getTitle()) -> 0 ms
+execution(void org.example.dto.FundDto.setTitle(String)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getTarget()) -> 0 ms
+execution(void org.example.dto.FundDto.setTarget(BigDecimal)) -> 0 ms
+execution(BigDecimal org.example.entity.Fund.getSavings()) -> 0 ms
+execution(void org.example.dto.FundDto.setSavings(BigDecimal)) -> 0 ms
+execution(User org.example.entity.Fund.getUser()) -> 0 ms
+execution(long org.example.entity.User.getId()) -> 0 ms
+execution(void org.example.dto.FundDto.setUserId(Long)) -> 0 ms
+execution(FundDto org.example.service.FundService.remove(FundDto)) -> 36 ms
+execution(String org.example.dto.FundDto.name()) -> 0 ms
+execution(int org.example.web.servlet.AbstractServlet.delete(PrintWriter, AbstractDto)) -> 39 ms
+execution(void org.example.web.servlet.AbstractServlet.lambda$execute$2(HttpServletRequest, AbstractDto, HttpServletResponse, PrintWriter, UserDto)) -> 50 ms
+execution(void org.example.web.servlet.AbstractServlet.execute(HttpServletRequest, HttpServletResponse, AbstractDto)) -> 62 ms
+execution(void org.example.web.servlet.FundServlet.process(HttpServletRequest, HttpServletResponse, String)) -> 65 ms
+execution(void org.example.web.servlet.AbstractServlet.doDelete(HttpServletRequest, HttpServletResponse)) -> 92 ms
+execution(String org.example.dto.FundDto.getTitle()) -> 0 ms
+]]></system-out>
+  </testcase>
+</testsuite>

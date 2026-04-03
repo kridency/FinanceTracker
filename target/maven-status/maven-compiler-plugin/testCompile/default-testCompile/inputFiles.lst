@@ -1,0 +1,7 @@
+/home/cupuyc/IdeaProjects/FinanceTracker/src/test/java/org/example/AbstractTest.java
+/home/cupuyc/IdeaProjects/FinanceTracker/src/test/java/org/example/servlet/AnalyticsServletTest.java
+/home/cupuyc/IdeaProjects/FinanceTracker/src/test/java/org/example/servlet/FundServletTest.java
+/home/cupuyc/IdeaProjects/FinanceTracker/src/test/java/org/example/servlet/LimitServletTest.java
+/home/cupuyc/IdeaProjects/FinanceTracker/src/test/java/org/example/servlet/NotificationServletTest.java
+/home/cupuyc/IdeaProjects/FinanceTracker/src/test/java/org/example/servlet/TransactionServletTest.java
+/home/cupuyc/IdeaProjects/FinanceTracker/src/test/java/org/example/servlet/UserServletTest.java

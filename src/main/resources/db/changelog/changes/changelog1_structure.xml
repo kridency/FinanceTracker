@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="create_sequence" author="kridency">
+        <createSequence
+                sequenceName="id_sequence"
+                minValue="1"
+                incrementBy="1"
+                dataType="bigint"
+                schemaName="${schemaName}"
+                startValue="1"/>
+    </changeSet>
+
+    <changeSet id="create_role_type" author="kridency">
+        <sqlFile
+                dbms="postgresql"
+                path="../../createRoleType.sql"
+                relativeToChangelogFile="true"
+                endDelimiter=";"
+                splitStatements="true"
+                stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="create_status_type" author="kridency">
+        <sqlFile
+                path="../../createStatusType.sql"
+                relativeToChangelogFile="true"
+                endDelimiter=";"
+                splitStatements="true"
+                stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="create_transaction_type" author="kridency">
+        <sqlFile
+                path="../../createTransactionType.sql"
+                relativeToChangelogFile="true"
+                endDelimiter=";"
+                splitStatements="true"
+                stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="create_user_table" author="kridency">
+        <createTable tableName="user" schemaName="${schemaName}" ifNotExists="true">
+            <column name="id" type="bigint" defaultValueSequenceNext="id_sequence">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar"/>
+            <column name="role" type="role_type"/>
+            <column name="status" type="status_type"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_user_index" author="kridency">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists indexName="idx_user_email"/>
+            </not>
+        </preConditions>
+        <createIndex indexName="idx_user_email" tableName="user" schemaName="${schemaName}">
+            <column name="email" type="varchar"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="create_transaction_table" author="kridency">
+        <createTable tableName="transaction" schemaName="${schemaName}" ifNotExists="true">
+            <column name="id" type="bigint" defaultValueSequenceNext="id_sequence">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="transaction_type"/>
+            <column name="category" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="numeric"/>
+            <column name="description" type="varchar"/>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_transaction_constraint" author="kridency">
+        <addUniqueConstraint
+                columnNames="date, user_id"
+                constraintName="transaction_unique_constraint"
+                tableName="transaction"/>
+    </changeSet>
+
+    <changeSet id="create_transaction_index" author="kridency">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists indexName="idx_transaction_date"/>
+            </not>
+        </preConditions>
+        <createIndex indexName="idx_transaction_date" tableName="transaction" schemaName="${schemaName}">
+            <column name="date" type="timestamp"/>
+            <column name="user_id" type="bigint"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="create_transaction_foreign_key" author="kridency">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="transaction"
+                                 constraintName="FK_TRANSACTION_USER"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user" validate="true"/>
+    </changeSet>
+
+    <changeSet id="create_invocation_table" author="kridency">
+        <createTable tableName="invocation" schemaName="${schemaName}" ifNotExists="true">
+            <column name="id" type="bigint" defaultValueSequenceNext="id_sequence">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="endpoint" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_invocation_constraint" author="kridency">
+        <addUniqueConstraint
+                columnNames="date, user_id"
+                constraintName="invocation_unique_constraint"
+                tableName="invocation"/>
+    </changeSet>
+
+    <changeSet id="create_invocation_index" author="kridency">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists indexName="idx_invocation_date"/>
+            </not>
+        </preConditions>
+        <createIndex indexName="idx_invocation_date" tableName="invocation" schemaName="${schemaName}">
+            <column name="date" type="timestamp"/>
+            <column name="user_id" type="bigint"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="create_invocation_foreign_key" author="kridency">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="invocation"
+                                 constraintName="FK_INVOCATION_USER"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user" validate="true"/>
+    </changeSet>
+
+    <changeSet id="create_fund_table" author="kridency">
+        <createTable tableName="fund" schemaName="${schemaName}" ifNotExists="true">
+            <column name="id" type="bigint" defaultValueSequenceNext="id_sequence">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="title" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="savings" type="numeric"/>
+            <column name="target" type="numeric"/>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_fund_constraint" author="kridency">
+        <addUniqueConstraint
+                columnNames="title, user_id"
+                constraintName="fund_unique_constraint"
+                tableName="fund"/>
+    </changeSet>
+
+    <changeSet id="create_fund_index" author="kridency">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists indexName="idx_fund_title"/>
+            </not>
+        </preConditions>
+        <createIndex indexName="idx_fund_title" tableName="fund" schemaName="${schemaName}">
+            <column name="title" type="varchar"/>
+            <column name="user_id" type="bigint"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="create_fund_foreign_key" author="kridency">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="fund"
+                                 constraintName="FK_FUND_USER"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user" validate="true"/>
+    </changeSet>
+
+    <changeSet id="create_limit_table" author="kridency">
+        <createTable tableName="limit" schemaName="${schemaName}" ifNotExists="true">
+            <column name="id" type="bigint" defaultValueSequenceNext="id_sequence">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="month" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="numeric"/>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_limit_constraint" author="kridency">
+        <addUniqueConstraint
+                columnNames="month, user_id"
+                constraintName="limit_unique_constraint"
+                tableName="limit"/>
+    </changeSet>
+
+    <changeSet id="create_limit_index" author="kridency">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists indexName="idx_limit_month"/>
+            </not>
+        </preConditions>
+        <createIndex indexName="idx_limit_month" tableName="limit" schemaName="${schemaName}">
+            <column name="month" type="varchar"/>
+            <column name="user_id" type="bigint"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="create_limit_foreign_key" author="kridency">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="limit"
+                                 constraintName="FK_LIMIT_USER"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user" validate="true"/>
+    </changeSet>
+
+</databaseChangeLog>
