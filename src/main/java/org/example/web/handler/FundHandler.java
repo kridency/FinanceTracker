@@ -6,7 +6,7 @@ public class FundHandler extends AbstractHandler {
     private static FundHandler INSTANCE;
 
     private FundHandler() {
-        servlet = FundServlet.getInstance();
+        servlet = new FundServlet();
     }
 
     public static FundHandler getInstance() {

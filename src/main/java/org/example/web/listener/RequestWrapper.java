@@ -9,19 +9,14 @@ import jakarta.servlet.http.HttpServletRequestWrapper;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.ws.rs.core.HttpHeaders;
 import org.example.dto.UserDto;
-import org.example.entity.User;
-import org.example.exception.ApplicationException;
 import org.example.service.CrudService;
 import org.example.service.UserService;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.util.*;
-
-import static org.example.preset.FinancialTrackerInit.UNAUTHORIZED;
 
 public class RequestWrapper extends HttpServletRequestWrapper {
     private final HttpExchange ex;

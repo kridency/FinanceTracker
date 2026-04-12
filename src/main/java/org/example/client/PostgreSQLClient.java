@@ -1,11 +1,7 @@
 package org.example.client;
 
 import org.example.property.ApplicationProperties;
-import org.postgresql.ds.PGConnectionPoolDataSource;
 import org.postgresql.ds.PGSimpleDataSource;
-
-import javax.sql.DataSource;
-
 
 public class PostgreSQLClient {
 

@@ -1,8 +1,6 @@
 package org.example.service;
 
-import org.example.dto.TransactionDto;
 import org.example.dto.UserDto;
-import org.example.entity.StatusType;
 import org.example.entity.User;
 import org.example.exception.ApplicationException;
 import org.example.mapper.UserMapper;

@@ -6,7 +6,7 @@ public class UserHandler extends AbstractHandler {
     private static UserHandler INSTANCE;
 
     private UserHandler() {
-        servlet = UserServlet.getInstance();
+        servlet = new UserServlet();
     }
 
     public static UserHandler getInstance() {

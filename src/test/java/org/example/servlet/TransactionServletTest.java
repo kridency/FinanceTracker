@@ -2,9 +2,7 @@ package org.example.servlet;
 
 import org.example.AbstractTest;
 import org.example.dto.TransactionDto;
-import org.example.dto.UserDto;
 import org.example.entity.TransactionType;
-import org.example.entity.User;
 import org.example.service.TransactionService;
 import org.example.web.listener.RequestStream;
 import org.example.web.listener.RequestWrapper;
@@ -26,6 +24,7 @@ import java.time.Instant;
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
 public class TransactionServletTest extends AbstractTest {
+    private static final TransactionServlet transactionServlet = Mockito.spy(new TransactionServlet());
     private static final TransactionService transactionService = Mockito.spy(new TransactionService());
 
     @Test
@@ -45,7 +44,7 @@ public class TransactionServletTest extends AbstractTest {
         Mockito.when(request.getReader())
                 .thenReturn(new BufferedReader(new InputStreamReader(new RequestStream(transactionString.getBytes()))));
 
-        TransactionServlet.getInstance().doGet(request, response);
+        transactionServlet.doGet(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println(transactionList);
     }
@@ -71,7 +70,7 @@ public class TransactionServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(newTransaction).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        TransactionServlet.getInstance().doPost(request, response);
+        transactionServlet.doPost(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_CREATED);
         Mockito.verify(writer).println("Запись " + newTransaction.getDescription() + " успешно создана.");
     }
@@ -98,7 +97,7 @@ public class TransactionServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(newTransaction).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        TransactionServlet.getInstance().doPut(request, response);
+        transactionServlet.doPut(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_CREATED);
         Mockito.verify(writer).println("Запись " + newTransaction.getDescription() + " успешно изменена.");
     }
@@ -121,7 +120,7 @@ public class TransactionServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(transaction).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        TransactionServlet.getInstance().doDelete(request, response);
+        transactionServlet.doDelete(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println("Запись " + transaction.getDescription() + " успешно удалена.");
     }

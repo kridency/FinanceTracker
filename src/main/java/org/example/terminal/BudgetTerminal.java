@@ -1,23 +1,17 @@
 package org.example.terminal;
 
 import org.example.dto.LimitDto;
-import org.example.dto.TransactionDto;
-import org.example.entity.TransactionType;
 import org.example.entity.User;
 import org.example.exception.ApplicationException;
 import org.example.service.AnalyticsService;
 import org.example.service.LimitService;
-import org.example.service.TransactionService;
 
 import static org.example.preset.FinancialTrackerInit.RETURN;
 
 import java.math.BigDecimal;
 import java.time.YearMonth;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Collection;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;

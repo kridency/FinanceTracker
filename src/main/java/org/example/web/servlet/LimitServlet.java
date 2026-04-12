@@ -1,46 +1,23 @@
 package org.example.web.servlet;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import org.example.dto.FundDto;
 import org.example.dto.LimitDto;
-import org.example.dto.UserDto;
-import org.example.entity.EndPoint;
 import org.example.exception.ApplicationException;
-import org.example.service.CrudService;
 import org.example.service.LimitService;
-import org.example.service.UserService;
-
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.Instant;
-import java.time.YearMonth;
-import java.util.Collection;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 import static org.example.preset.FinancialTrackerInit.*;
-import static org.example.preset.FinancialTrackerInit.BAD_REQUEST;
 
 public class LimitServlet extends AbstractServlet<LimitDto> {
-    private static LimitServlet INSTANCE;
 
-    private LimitServlet() {
+    public LimitServlet() {
         PATH = "/api/v1/limit";
         service = new LimitService();
-    }
-
-    public static LimitServlet getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new LimitServlet();
-        }
-        return INSTANCE;
     }
 
     protected void process(HttpServletRequest request, HttpServletResponse response, String endpoint) {

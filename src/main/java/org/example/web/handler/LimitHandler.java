@@ -6,7 +6,7 @@ public class LimitHandler extends AbstractHandler {
     private static LimitHandler INSTANCE;
 
     private LimitHandler() {
-        servlet = LimitServlet.getInstance();
+        servlet = new LimitServlet();
     }
 
     public static LimitHandler getInstance() {

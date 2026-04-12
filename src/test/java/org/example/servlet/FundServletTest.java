@@ -22,6 +22,7 @@ import java.math.BigDecimal;
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
 public class FundServletTest extends AbstractTest {
+    private static final FundServlet fundServlet = Mockito.spy(new FundServlet());
     private static final FundService fundService = Mockito.spy(new FundService());
 
     @Test
@@ -41,7 +42,7 @@ public class FundServletTest extends AbstractTest {
         Mockito.when(request.getReader())
                 .thenReturn(new BufferedReader(new InputStreamReader(new RequestStream(fundString.getBytes()))));
 
-        FundServlet.getInstance().doGet(request, response);
+        fundServlet.doGet(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println(fundList);
     }
@@ -64,7 +65,7 @@ public class FundServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(newFund).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        FundServlet.getInstance().doPost(request, response);
+        fundServlet.doPost(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_CREATED);
         Mockito.verify(writer).println("Запись " + newFund.getTitle() + " успешно создана.");
     }
@@ -89,7 +90,7 @@ public class FundServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(newFund).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        FundServlet.getInstance().doPut(request, response);
+        fundServlet.doPut(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_CREATED);
         Mockito.verify(writer).println("Запись " + newFund.getTitle() + " успешно изменена.");
     }
@@ -111,7 +112,7 @@ public class FundServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(fund).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        FundServlet.getInstance().doDelete(request, response);
+        fundServlet.doDelete(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println("Запись " + fund.getTitle() + " успешно удалена.");
     }

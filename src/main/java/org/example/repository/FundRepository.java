@@ -1,8 +1,6 @@
 package org.example.repository;
 
-import org.example.client.PostgreSQLClient;
 import org.example.entity.Fund;
-import org.example.entity.Limit;
 import org.example.entity.User;
 import org.example.exception.ApplicationException;
 

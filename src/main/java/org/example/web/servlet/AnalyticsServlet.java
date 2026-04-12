@@ -17,22 +17,14 @@ import java.util.Optional;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class AnalyticsServlet extends HttpServlet {
-    private static AnalyticsServlet INSTANCE;
     private final String PATH;
     private final AnalyticsService service;
     private final UserService userService;
 
-    private AnalyticsServlet() {
+    public AnalyticsServlet() {
         PATH = "/api/v1/analytics";
         service = new AnalyticsService();
         userService = new UserService();
-    }
-
-    public static AnalyticsServlet getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new AnalyticsServlet();
-        }
-        return INSTANCE;
     }
 
     @Override

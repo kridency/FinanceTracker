@@ -18,6 +18,7 @@ import java.util.Map;
 import static org.example.preset.FinancialTrackerInit.DATE_FORMAT;
 
 public class AnalyticsServletTest {
+    private final AnalyticsServlet analyticsServlet = Mockito.spy(new AnalyticsServlet());
     private final AnalyticsService analyticsService = Mockito.spy(new AnalyticsService());
     private final Map.Entry<Map.Entry<LocalDate, LocalDate>, Long> dto =
             Map.entry(Map.entry(LocalDate.parse("01.01.2024", DATE_FORMAT), LocalDate.parse("31.12.2024", DATE_FORMAT)), 2L);
@@ -35,7 +36,7 @@ public class AnalyticsServletTest {
         Mockito.when(request.getUserPrincipal()).thenReturn(() -> "name@hostname");
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        AnalyticsServlet.getInstance().doGet(request, response);
+        analyticsServlet.doGet(request, response);
         Mockito.verify(writer).println(balanceView);
     }
 
@@ -54,7 +55,7 @@ public class AnalyticsServletTest {
         Mockito.when(request.getParameter("from")).thenReturn("01.01.2024");
         Mockito.when(request.getParameter("to")).thenReturn("31.12.2024");
 
-        AnalyticsServlet.getInstance().doGet(request, response);
+        analyticsServlet.doGet(request, response);
         Mockito.verify(writer).println(summaryView);
     }
 
@@ -71,7 +72,7 @@ public class AnalyticsServletTest {
         Mockito.when(request.getUserPrincipal()).thenReturn(() -> "name@hostname");
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        AnalyticsServlet.getInstance().doGet(request, response);
+        analyticsServlet.doGet(request, response);
         Mockito.verify(writer).println(expensesView);
     }
 
@@ -88,7 +89,7 @@ public class AnalyticsServletTest {
         Mockito.when(request.getUserPrincipal()).thenReturn(() -> "name@hostname");
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        AnalyticsServlet.getInstance().doGet(request, response);
+        analyticsServlet.doGet(request, response);
         Mockito.verify(writer).println(conditionView);
     }
 }

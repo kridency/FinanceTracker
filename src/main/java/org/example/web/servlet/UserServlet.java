@@ -21,19 +21,11 @@ import java.util.stream.Collectors;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class UserServlet extends AbstractServlet<UserDto> {
-    private static UserServlet INSTANCE;
     private final CrudService<TransactionDto> transactionService;
 
-    private UserServlet() {
+    public UserServlet() {
         service = userService;
         transactionService = new TransactionService();
-    }
-
-    public static UserServlet getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new UserServlet();
-        }
-        return INSTANCE;
     }
 
     private void logout (HttpServletResponse response, UserDto dto) {

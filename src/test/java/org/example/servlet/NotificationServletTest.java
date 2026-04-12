@@ -24,6 +24,9 @@ import java.time.Instant;
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
 public class NotificationServletTest extends AbstractTest  {
+    private static final NotificationServlet notificationServlet = Mockito.spy(new NotificationServlet());
+    private static final TransactionServlet transactionServlet = Mockito.spy(new TransactionServlet());
+
     @Test
     @DisplayName("Попытка активации уведомлений пользователя и списания средств с овердрафтом")
     public void givenCurrentUserAndNewTransaction_whenTryToActivateNotification_thenReturnBadRequest() throws IOException {
@@ -38,7 +41,7 @@ public class NotificationServletTest extends AbstractTest  {
                 .thenReturn(new BufferedReader(new InputStreamReader(new RequestStream(objectMapper
                         .writeValueAsString("{}").getBytes()))));
 
-        NotificationServlet.getInstance().doPut(request, response);
+        notificationServlet.doPut(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println("Уведомления успешно активированы");
 
@@ -56,7 +59,7 @@ public class NotificationServletTest extends AbstractTest  {
                 new RequestStream(objectMapper.writeValueAsString(newTransaction).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        TransactionServlet.getInstance().doPost(request, response);
+        transactionServlet.doPost(request, response);
         Mockito.verify(writer).println("Уведомление: превышение установленного лимита расходования");
     }
 }

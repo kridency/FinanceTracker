@@ -1,15 +1,12 @@
 package org.example.repository;
 
-import org.example.client.PostgreSQLClient;
 import org.example.entity.*;
 import org.example.exception.ApplicationException;
-import org.postgresql.ds.PGConnectionPoolDataSource;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.time.Instant;
 import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Stream;
 

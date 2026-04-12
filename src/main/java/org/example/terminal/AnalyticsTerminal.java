@@ -1,8 +1,5 @@
 package org.example.terminal;
 
-import org.example.dto.TransactionDto;
-import org.example.dto.UserDto;
-import org.example.entity.User;
 import org.example.exception.ApplicationException;
 import org.example.service.AnalyticsService;
 
@@ -12,7 +9,6 @@ import java.time.YearMonth;
 import java.time.format.DateTimeParseException;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static org.example.preset.FinancialTrackerInit.DATE_FORMAT;

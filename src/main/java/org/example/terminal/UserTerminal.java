@@ -5,8 +5,6 @@ import org.example.exception.ApplicationException;
 import org.example.mapper.UserMapper;
 
 import static org.example.preset.FinancialTrackerInit.RETURN;
-
-import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class UserTerminal extends AbstractTerminal<UserDto> {

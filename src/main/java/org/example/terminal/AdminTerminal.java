@@ -3,15 +3,10 @@ package org.example.terminal;
 import org.example.dto.TransactionDto;
 import org.example.dto.UserDto;
 import org.example.entity.StatusType;
-import org.example.entity.Transaction;
-import org.example.entity.TransactionType;
-import org.example.entity.User;
 import org.example.exception.ApplicationException;
 import org.example.service.TransactionService;
 
-import java.math.BigDecimal;
 import java.util.Collection;
-import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;

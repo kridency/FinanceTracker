@@ -23,6 +23,7 @@ import java.time.YearMonth;
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
 public class LimitServletTest extends AbstractTest {
+    private static final LimitServlet limitServlet = Mockito.spy(new LimitServlet());
     private static final LimitService limitService = Mockito.spy(new LimitService());
 
     @Test
@@ -42,7 +43,7 @@ public class LimitServletTest extends AbstractTest {
         Mockito.when(request.getReader())
                 .thenReturn(new BufferedReader(new InputStreamReader(new RequestStream(limitString.getBytes()))));
 
-        LimitServlet.getInstance().doGet(request, response);
+        limitServlet.doGet(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println(limitList);
     }
@@ -65,7 +66,7 @@ public class LimitServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(newLimit).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        LimitServlet.getInstance().doPost(request, response);
+        limitServlet.doPost(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_CREATED);
         Mockito.verify(writer).println("Запись " + newLimit.getMonth() + " успешно создана.");
     }
@@ -90,7 +91,7 @@ public class LimitServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(newLimit).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        LimitServlet.getInstance().doPut(request, response);
+        limitServlet.doPut(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_CREATED);
         Mockito.verify(writer).println("Запись " + newLimit.getMonth() + " успешно изменена.");
     }
@@ -113,7 +114,7 @@ public class LimitServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(limit).getBytes()))));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        LimitServlet.getInstance().doDelete(request, response);
+        limitServlet.doDelete(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println("Запись " + limit.getMonth() + " успешно удалена.");
     }

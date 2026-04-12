@@ -20,6 +20,7 @@ import java.io.*;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class UserServletTest extends AbstractTest {
+    private static final UserServlet userServlet = Mockito.spy(new UserServlet());
     private static final TransactionService transactionService = Mockito.spy(new TransactionService());
 
     @Test
@@ -37,7 +38,7 @@ public class UserServletTest extends AbstractTest {
         )));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        UserServlet.getInstance().doPost(request, response);
+        userServlet.doPost(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_CREATED);
         Mockito.verify(writer).println("Запись " + userDto.getEmail() + " успешно создана.");
     }
@@ -58,7 +59,7 @@ public class UserServletTest extends AbstractTest {
         )));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        UserServlet.getInstance().doPut(request, response);
+        userServlet.doPut(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_CREATED);
         Mockito.verify(writer).println("Запись " + userDto.getEmail() + " успешно изменена.");
     }
@@ -75,7 +76,7 @@ public class UserServletTest extends AbstractTest {
         Mockito.when(request.getReader()).thenReturn(Mockito.mock(BufferedReader.class));
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        UserServlet.getInstance().doDelete(request, response);
+        userServlet.doDelete(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println("Запись test@hostname успешно удалена.");
     }
@@ -97,7 +98,7 @@ public class UserServletTest extends AbstractTest {
                 new RequestStream(objectMapper.writeValueAsString(userDto).getBytes())
         )));
 
-        UserServlet.getInstance().doGet(request, response);
+        userServlet.doGet(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println(userList);
     }
@@ -119,7 +120,7 @@ public class UserServletTest extends AbstractTest {
                 .thenReturn(new BufferedReader(new InputStreamReader(new RequestStream("{}".getBytes()))));
         Mockito.when(request.getParameter("id")).thenReturn("2");
 
-        UserServlet.getInstance().doGet(request, response);
+        userServlet.doGet(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
         Mockito.verify(writer).println(transactionList);
     }

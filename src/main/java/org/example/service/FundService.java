@@ -1,8 +1,6 @@
 package org.example.service;
 
 import org.example.dto.FundDto;
-import org.example.dto.LimitDto;
-import org.example.dto.UserDto;
 import org.example.entity.*;
 import org.example.exception.ApplicationException;
 import org.example.mapper.FundMapper;
@@ -10,9 +8,7 @@ import org.example.repository.FundRepository;
 import org.example.repository.UserRepository;
 import org.example.util.Specification;
 
-import java.math.BigDecimal;
 import java.util.*;
-import java.util.stream.IntStream;
 
 import static org.example.preset.FinancialTrackerInit.*;
 

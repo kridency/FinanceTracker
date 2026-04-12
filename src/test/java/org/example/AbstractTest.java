@@ -18,8 +18,6 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
 import org.testcontainers.utility.DockerImageName;
 
-import javax.sql.DataSource;
-
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
 public abstract class AbstractTest {

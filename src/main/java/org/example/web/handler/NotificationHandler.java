@@ -6,7 +6,7 @@ public class NotificationHandler extends AbstractHandler {
     private static NotificationHandler INSTANCE;
 
     private NotificationHandler() {
-        servlet = NotificationServlet.getInstance();
+        servlet = new NotificationServlet();
     }
 
     public static NotificationHandler getInstance() {

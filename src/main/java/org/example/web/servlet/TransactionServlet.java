@@ -1,18 +1,11 @@
 package org.example.web.servlet;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.servlet.annotation.WebServlet;
-import org.example.dto.FundDto;
-import org.example.dto.LimitDto;
 import org.example.dto.TransactionDto;
-import org.example.entity.EndPoint;
 import org.example.exception.ApplicationException;
 import org.example.handler.NotificationInvocationHandler;
 import org.example.service.CrudService;
 import org.example.service.TransactionService;
-import org.example.service.UserService;
-
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -20,11 +13,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Proxy;
-import java.time.Instant;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static org.example.preset.FinancialTrackerInit.*;
@@ -35,22 +23,14 @@ import static org.example.preset.FinancialTrackerInit.BAD_ENDPOINT;
         "/api/v1/transaction/delete",
         "/api/v1/transaction/list"})
 public class TransactionServlet extends AbstractServlet<TransactionDto> {
-    private static TransactionServlet INSTANCE;
 
     @SuppressWarnings("unchecked")
-    private TransactionServlet() {
+    public TransactionServlet() {
         PATH = "/api/v1/transaction";
         service = (CrudService<TransactionDto>) Proxy.newProxyInstance (
                 CrudService.class.getClassLoader(),
                 new Class<?>[] { CrudService.class },
                 new NotificationInvocationHandler<>(new TransactionService()));
-    }
-
-    public static TransactionServlet getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new TransactionServlet();
-        }
-        return INSTANCE;
     }
 
     protected int create(PrintWriter writer, TransactionDto transaction) {

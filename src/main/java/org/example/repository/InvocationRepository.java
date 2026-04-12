@@ -1,20 +1,13 @@
 package org.example.repository;
 
-import org.example.client.PostgreSQLClient;
 import org.example.entity.Invocation;
-import org.example.entity.Limit;
 import org.example.entity.User;
 import org.example.exception.ApplicationException;
-import org.postgresql.ds.PGConnectionPoolDataSource;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.time.YearMonth;
-import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 import static org.example.preset.FinancialTrackerInit.*;

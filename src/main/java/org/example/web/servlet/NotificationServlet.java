@@ -1,6 +1,4 @@
 package org.example.web.servlet;
-import org.example.dto.UserDto;
-import org.example.entity.EndPoint;
 import org.example.entity.User;
 import org.example.exception.ApplicationException;
 import org.example.service.NotificationService;
@@ -11,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 import java.security.Principal;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -19,21 +16,13 @@ import static org.example.preset.FinancialTrackerInit.*;
 
 public class NotificationServlet extends HttpServlet {
     private final String PATH;
-    private static NotificationServlet INSTANCE;
     private final UserService userService;
     private final NotificationService notificationService;
 
-    private NotificationServlet() {
+    public NotificationServlet() {
         PATH = "/api/v1/notification";
         userService = new UserService();
         notificationService = new NotificationService();
-    }
-
-    public static NotificationServlet getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new NotificationServlet();
-        }
-        return INSTANCE;
     }
 
     private void toggle(HttpServletResponse response, User user) {

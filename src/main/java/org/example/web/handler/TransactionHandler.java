@@ -6,7 +6,7 @@ public class TransactionHandler extends AbstractHandler {
         private static TransactionHandler INSTANCE;
 
         private TransactionHandler() {
-            servlet = TransactionServlet.getInstance();
+            servlet = new TransactionServlet();
         }
 
         public static TransactionHandler getInstance() {
