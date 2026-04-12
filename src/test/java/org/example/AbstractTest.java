@@ -7,10 +7,10 @@ import liquibase.Liquibase;
 import liquibase.database.DatabaseFactory;
 import liquibase.database.jvm.JdbcConnection;
 import liquibase.resource.ClassLoaderResourceAccessor;
-import org.example.client.PostgreSQLClient;
 import org.example.exception.ApplicationException;
 import org.example.property.ApplicationProperties;
 import org.example.property.LiquibaseProperties;
+import org.example.repository.CrudRepository;
 import org.example.service.UserService;
 import org.postgresql.ds.PGSimpleDataSource;
 import org.slf4j.LoggerFactory;
@@ -39,7 +39,7 @@ public abstract class AbstractTest {
                 .withEnv("PGTZ", "UTC")
                 .withUrlParam("connectionTimeZone", "UTC")
                 .start();
-        datasource = new PostgreSQLClient().getDataSource();
+        datasource = CrudRepository.CLIENT.getDataSource();
         datasource.setPortNumbers(new int[]{
                 postgreSQLContainer
                         .getMappedPort(Integer.parseInt(applicationProperties.getProperty("datasource.port")))
