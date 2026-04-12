@@ -31,27 +31,13 @@ public abstract class AbstractTerminal<T> {
             System.out.print(COMMAND_PROMPT);
             var command = scanner.nextLine();
             try {
-                User principal;
                 Optional.ofNullable(commands.get(command))
                         .ifPresentOrElse(consumer -> consumer.accept(processCommand(command)),
                                 () -> { throw new ApplicationException(INPUT_ERROR); });
-                principal = getPrincipal();
-                goBack = command.equals("login") && principal != null;
-                if (principal != null) {
-                    try {
-                        userService.findByEmail(principal.getEmail());
-                    } catch (ApplicationException e) {
-                        if (e.getMessage().equals(USER_NOT_FOUND)) {
-                            setPrincipal(null);
-                            goBack = true;
-                        }
-                    }
-                }
+                goBack = command.equals("login") && getPrincipal() != null;
             } catch (ApplicationException e) {
-                if(e.getMessage().equals(RETURN) || e.getMessage().equals(UNAUTHORIZED))
-                    goBack = true;
-                else
-                    System.out.println(e.getMessage());
+                goBack = e.getMessage().equals(RETURN) || e.getMessage().equals(UNAUTHORIZED);
+                System.out.println(e.getMessage());
             }
         }
     }

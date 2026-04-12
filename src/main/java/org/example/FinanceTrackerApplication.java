@@ -49,13 +49,14 @@ public class FinanceTrackerApplication {
         try {
             while(true) {
                 Optional.ofNullable(AbstractTerminal.getPrincipal()).ifPresentOrElse(user -> {
-                    var isAdmin = user.getRole().equals(RoleType.ADMIN);
+                    var adminMenu = user.getRole().equals(RoleType.ADMIN) ? System.lineSeparator()
+                            + "\tadministration (Администрирование)" : "";
 
-                    System.out.println((isAdmin ? System.lineSeparator() + "\tadministration (Администрирование)" : "")
-                            + COMMAND_MENU);
+                    System.out.println(adminMenu + COMMAND_MENU);
                     System.out.print(COMMAND_PROMPT);
                     var command = SCANNER.nextLine();
-                    if(!isAdmin && command.equals("administration")) {
+
+                    if(adminMenu.isEmpty() && command.equals("administration")) {
                         throw new ApplicationException(INPUT_ERROR);
                     }
 
@@ -70,8 +71,7 @@ public class FinanceTrackerApplication {
                                             }
                                         });
                     } catch(ApplicationException e) {
-                        if(!e.getMessage().equals("return"))
-                            System.out.println(e.getMessage());
+                        System.out.println(e.getMessage());
                     }
                 }, () -> terminals.get("authentication").runCommands());
             }
