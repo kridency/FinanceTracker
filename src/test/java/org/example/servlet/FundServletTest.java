@@ -53,6 +53,7 @@ public class FundServletTest extends AbstractTest {
         var newFund = new FundDto();
         newFund.setTitle("Pension");
         newFund.setTarget(BigDecimal.valueOf(10_000.00));
+        newFund.setSavings(BigDecimal.valueOf(1_000.00));
         newFund.setUserId(userService.loadUserByUsername("name@hostname").getId());
 
         final PrintWriter writer = Mockito.mock(PrintWriter.class);

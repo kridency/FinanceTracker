@@ -72,7 +72,7 @@ public class AnalyticsService {
 
     public static BigDecimal savings (Long id) {
         return Optional.ofNullable(id).map(fundRepository::getAllByUserId).stream().flatMap(Collection::stream)
-                .map(Fund::getSavings).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+                .map(Fund::getSavings).filter(Objects::nonNull).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
     }
 
     private static final BiFunction<String[], String[], String> VIEW = (decoding, values) ->
