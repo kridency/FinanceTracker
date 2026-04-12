@@ -18,12 +18,12 @@ public class HttpListener {
     private final AnalyticsHandler analyticsHandler;
 
     private HttpListener() {
-        userHandler = UserHandler.getInstance();
-        transactionHandler = TransactionHandler.getInstance();
-        fundHandler = FundHandler.getInstance();
-        limitHandler = LimitHandler.getInstance();
-        notificationHandler = NotificationHandler.getInstance();
-        analyticsHandler = AnalyticsHandler.getInstance();
+        userHandler = new UserHandler();
+        transactionHandler = new TransactionHandler();
+        fundHandler = new FundHandler();
+        limitHandler = new LimitHandler();
+        notificationHandler = new NotificationHandler();
+        analyticsHandler = new AnalyticsHandler();
     }
 
     public static HttpListener getInstance() {

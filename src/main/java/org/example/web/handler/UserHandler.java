@@ -3,16 +3,7 @@ package org.example.web.handler;
 import org.example.web.servlet.UserServlet;
 
 public class UserHandler extends AbstractHandler {
-    private static UserHandler INSTANCE;
-
-    private UserHandler() {
+    public UserHandler() {
         servlet = new UserServlet();
-    }
-
-    public static UserHandler getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new UserHandler();
-        }
-        return INSTANCE;
     }
 }
