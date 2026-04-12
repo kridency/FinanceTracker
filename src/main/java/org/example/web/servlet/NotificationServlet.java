@@ -25,8 +25,8 @@ public class NotificationServlet extends HttpServlet {
 
     private NotificationServlet() {
         PATH = "/api/v1/notification";
-        userService = UserService.getInstance();
-        notificationService = NotificationService.getInstance();
+        userService = new UserService();
+        notificationService = new NotificationService();
     }
 
     public static NotificationServlet getInstance() {

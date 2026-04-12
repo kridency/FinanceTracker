@@ -15,22 +15,14 @@ import static org.example.preset.FinancialTrackerInit.BAD_REQUEST;
 import static org.example.preset.FinancialTrackerInit.TRANSACTION_NOT_FOUND;
 
 public class TransactionService implements CrudService<TransactionDto> {
-    private static TransactionService INSTANCE;
     private final TransactionRepository transactionRepository;
     private final TransactionMapper transactionMapper;
     private final UserRepository userRepository;
 
-    private TransactionService() {
-        userRepository = UserRepository.getInstance();
+    public TransactionService() {
         transactionMapper = TransactionMapper.getInstance();
-        transactionRepository = TransactionRepository.getInstance();
-    }
-
-    public static TransactionService getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new TransactionService();
-        }
-        return INSTANCE;
+        transactionRepository = new TransactionRepository();
+        userRepository = new UserRepository();
     }
 
     public TransactionDto create(TransactionDto data) {

@@ -25,10 +25,9 @@ import java.util.stream.IntStream;
 import static org.example.preset.FinancialTrackerInit.NEW_LINE;
 
 public class AnalyticsService {
-    private static AnalyticsService INSTANCE;
-    private static final TransactionRepository transactionRepository = TransactionRepository.getInstance();
-    private static final LimitRepository limitRepository = LimitRepository.getInstance();
-    private static final FundRepository fundRepository = FundRepository.getInstance();
+    private static final TransactionRepository transactionRepository = new TransactionRepository();
+    private static final LimitRepository limitRepository = new LimitRepository();
+    private static final FundRepository fundRepository = new FundRepository();
 
     private final String TOTAL_OUTCOME = "\t\tВсего расходов на сумму :";
     private final String TOTAL_INCOME = "\t\tВсего доходов на сумму :";
@@ -47,15 +46,6 @@ public class AnalyticsService {
             value.getDate().isAfter(borders.getKey().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()) &&
                     value.getDate().isBefore(borders.getValue().plusDays(1).atStartOfDay()
                             .atZone(ZoneId.systemDefault()).toInstant());
-
-    private AnalyticsService() {}
-
-    public static AnalyticsService getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new AnalyticsService();
-        }
-        return INSTANCE;
-    }
 
     private static BigDecimal total (Long userId,
                              Map.Entry<LocalDate, LocalDate> period,

@@ -23,15 +23,14 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class BudgetTerminal extends AbstractTerminal<LimitDto> {
-    private static BudgetTerminal INSTANCE;
 
-    private BudgetTerminal() {
+    public BudgetTerminal() {
         commandMenu = System.lineSeparator() + "\tcreate (Установка лимита)"
                 + System.lineSeparator() + "\tupdate (Корректировка лимита)"
                 + System.lineSeparator() + "\tremove (Удаление лимита)"
                 + System.lineSeparator() + "\ttrack (Отслеживание лимита)"
                 + System.lineSeparator() + "\treturn (Возврат в главное меню)";
-        service = LimitService.getInstance();
+        service = new LimitService();
         commands = new ConcurrentHashMap<>() {{
             put("create", service::create);
             put("update", service::update);
@@ -39,13 +38,6 @@ public class BudgetTerminal extends AbstractTerminal<LimitDto> {
             put("track", limit -> print(limit));
             put("return", limit -> {});
         }};
-    }
-
-    public static BudgetTerminal getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new BudgetTerminal();
-        }
-        return INSTANCE;
     }
 
     @Override

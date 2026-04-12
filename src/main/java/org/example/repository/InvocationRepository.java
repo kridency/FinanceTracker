@@ -7,6 +7,7 @@ import org.example.entity.User;
 import org.example.exception.ApplicationException;
 import org.postgresql.ds.PGConnectionPoolDataSource;
 
+import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -19,8 +20,8 @@ import java.util.Optional;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class InvocationRepository implements CrudRepository<Invocation> {
-    private static InvocationRepository INSTANCE;
     private final CrudRepository<User> userRepository;
+    private final DataSource dataSource;
 
     private static final String INSERT_QUERY = "INSERT INTO \"invocation\" (date, endpoint, user_id) VALUES (?,?,?)";
     private static final String UPDATE_QUERY = "UPDATE \"invocation\" SET endpoint=? WHERE id=?";
@@ -28,20 +29,14 @@ public class InvocationRepository implements CrudRepository<Invocation> {
     private static final String GET_UNIQUE_QUERY = "SELECT * FROM \"invocation\" WHERE date=? AND user_id=?";
     private static final String GET_BY_ID_QUERY = "SELECT * FROM \"invocation\" WHERE id=?";
 
-    private InvocationRepository() {
-        userRepository = UserRepository.getInstance();
-    }
-
-    public static InvocationRepository getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new InvocationRepository();
-        }
-        return INSTANCE;
+    public InvocationRepository() {
+        dataSource = CLIENT.getDataSource();
+        userRepository = new UserRepository();
     }
 
     public Invocation add(Invocation invocation) {
         return Optional.ofNullable(invocation).map(newValue -> {
-            try (var connection = datasource.getConnection()) {
+            try (var connection = dataSource.getConnection()) {
                 try (var statement = connection.prepareStatement(INSERT_QUERY)) {
                     statement.setTimestamp(1, Timestamp.from(newValue.getDate()), UTC_CALENDAR);
                     statement.setString(2, newValue.getEndpoint());
@@ -59,7 +54,7 @@ public class InvocationRepository implements CrudRepository<Invocation> {
 
     public Invocation update(Invocation invocation) {
         return Optional.ofNullable(invocation).map(newValue -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(UPDATE_QUERY)) {
                 try {
                     statement.setString(1, newValue.getEndpoint());
@@ -76,7 +71,7 @@ public class InvocationRepository implements CrudRepository<Invocation> {
 
     public Invocation delete(Invocation invocation) {
         return Optional.ofNullable(invocation).map(value -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(DELETE_QUERY)) {
                 try {
                     statement.setLong(1, value.getId());
@@ -93,7 +88,7 @@ public class InvocationRepository implements CrudRepository<Invocation> {
     public Optional<Invocation> getByDateAndUser(Instant instant, User user) {
         return Optional.ofNullable(instant).map(date ->
                 Optional.ofNullable(user).map(principal -> {
-                    try (var connection = datasource.getConnection();
+                    try (var connection = dataSource.getConnection();
                          var statement = connection.prepareStatement(GET_UNIQUE_QUERY)) {
                         statement.setTimestamp(1, Timestamp.from(date), UTC_CALENDAR);
                         statement.setLong(2, principal.getId());
@@ -117,7 +112,7 @@ public class InvocationRepository implements CrudRepository<Invocation> {
 
     public Optional<Invocation> getById(Long id) {
         return Optional.ofNullable(id).map(value -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(GET_BY_ID_QUERY)) {
                 statement.setLong(1, value);
                 try (var resultSet = statement.executeQuery()) {

@@ -5,6 +5,7 @@ import org.example.entity.*;
 import org.example.exception.ApplicationException;
 import org.postgresql.ds.PGConnectionPoolDataSource;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.time.Instant;
 import java.time.ZoneOffset;
@@ -15,8 +16,8 @@ import java.util.stream.Stream;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class TransactionRepository implements CrudRepository<Transaction> {
-    private static TransactionRepository INSTANCE;
     private final UserRepository userRepository;
+    private final DataSource dataSource;
 
     private static final String INSERT_QUERY = "INSERT INTO \"transaction\" (date, type, category, amount, description, user_id) "
             + "VALUES (?,?,?,?,?,?)";
@@ -27,20 +28,14 @@ public class TransactionRepository implements CrudRepository<Transaction> {
     private static final String GET_ALL_QUERY = "SELECT * FROM \"transaction\"";
     private static final String GET_BY_ID_QUERY = "SELECT * FROM \"transaction\" WHERE id=?";
 
-    private TransactionRepository() {
-        userRepository = UserRepository.getInstance();
-    }
-
-    public static TransactionRepository getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new TransactionRepository();
-        }
-        return INSTANCE;
+    public TransactionRepository() {
+        dataSource = CLIENT.getDataSource();
+        userRepository = new UserRepository();
     }
 
     public Transaction add(Transaction transaction) {
         return Optional.ofNullable(transaction).map(newValue -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(INSERT_QUERY)) {
                 var date = Optional.ofNullable(newValue.getDate()).orElse(Instant.now());
                 var userId = Optional.ofNullable(newValue.getUser()).map(User::getId).orElse(0L);
@@ -59,7 +54,7 @@ public class TransactionRepository implements CrudRepository<Transaction> {
 
     public Transaction update(Transaction transaction) {
         return Optional.ofNullable(transaction).map(newValue -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(UPDATE_QUERY)) {
                 statement.setString(1, newValue.getCategory());
                 statement.setBigDecimal(2, newValue.getAmount());
@@ -74,7 +69,7 @@ public class TransactionRepository implements CrudRepository<Transaction> {
 
     public Transaction delete(Transaction transaction) {
         return Optional.ofNullable(transaction).map(value -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(DELETE_QUERY)) {
                 statement.setLong(1, value.getId());
                 return statement.executeUpdate() == 1 ? value : null;
@@ -88,7 +83,7 @@ public class TransactionRepository implements CrudRepository<Transaction> {
         return Optional.ofNullable(userId).map(id -> {
             var user = userRepository.getById(id).orElseThrow(() -> new ApplicationException(USER_NOT_FOUND));
             return Optional.ofNullable(instant).map(date -> {
-                try (var connection = datasource.getConnection();
+                try (var connection = dataSource.getConnection();
                      var statement = connection.prepareStatement(GET_UNIQUE_QUERY)) {
                     statement.setTimestamp(1, Timestamp.from(date), UTC_CALENDAR);
                     statement.setLong(2, id);
@@ -119,7 +114,7 @@ public class TransactionRepository implements CrudRepository<Transaction> {
     public Collection<Transaction> getAllByUserId(Long userId) {
         return Optional.ofNullable(userId).map(id -> {
             var user = userRepository.getById(id).orElseThrow(() -> new ApplicationException(USER_NOT_FOUND));
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(GET_BY_USERID_QUERY)) {
                 statement.setLong(1, id);
                 try (var resultSet = statement.executeQuery()) {
@@ -152,7 +147,7 @@ public class TransactionRepository implements CrudRepository<Transaction> {
     }
 
     public Collection<Transaction> getAll() {
-        try (var connection = datasource.getConnection();
+        try (var connection = dataSource.getConnection();
              var statement = connection.prepareStatement(GET_ALL_QUERY);
              var resultSet = statement.executeQuery()) {
             return Stream.generate(() -> {
@@ -182,7 +177,7 @@ public class TransactionRepository implements CrudRepository<Transaction> {
 
     public Optional<Transaction> getById(Long transactionId) {
         return Optional.ofNullable(transactionId).map(id -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(GET_BY_ID_QUERY)) {
                 statement.setLong(1, id);
                 try (var resultSet = statement.executeQuery()) {

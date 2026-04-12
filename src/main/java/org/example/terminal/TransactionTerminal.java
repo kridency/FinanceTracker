@@ -23,7 +23,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class TransactionTerminal extends AbstractTerminal<TransactionDto> {
-    private static TransactionTerminal INSTANCE;
     public static final Function<Collection<TransactionDto>, String> VIEW = collection ->
             "\n\t\tДата\t\t\t|\t\tТип\t\t|\t\tКатегория\t\t|\t\tСумма\t\t|\t\tОписание\n" + "-".repeat(130) + "\n" +
                     collection.stream().map(value ->
@@ -32,7 +31,7 @@ public class TransactionTerminal extends AbstractTerminal<TransactionDto> {
                                     + value.getDescription()).collect(Collectors.joining("\n"));
 
     @SuppressWarnings("unchecked")
-    private TransactionTerminal() {
+    public TransactionTerminal() {
         commandMenu = System.lineSeparator() + "\tcreate (Создать транзакцию)"
                 + System.lineSeparator() + "\tupdate (Редактирование транзакция)"
                 + System.lineSeparator() + "\tdelete (Удаление транзакции)"
@@ -41,7 +40,7 @@ public class TransactionTerminal extends AbstractTerminal<TransactionDto> {
         service = (CrudService<TransactionDto>) Proxy.newProxyInstance (
                 CrudService.class.getClassLoader(),
                 new Class<?>[] { CrudService.class },
-                new NotificationInvocationHandler<>(TransactionService.getInstance()));
+                new NotificationInvocationHandler<>(new TransactionService()));
         commands = new ConcurrentHashMap<>() {{
             put("create", service::create);
             put("update", service::update);
@@ -49,13 +48,6 @@ public class TransactionTerminal extends AbstractTerminal<TransactionDto> {
             put("list", transaction -> print(transaction));
             put("return", transaction -> {});
         }};
-    }
-
-    public static TransactionTerminal getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new TransactionTerminal();
-        }
-        return INSTANCE;
     }
 
     @Override

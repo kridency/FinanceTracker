@@ -15,20 +15,12 @@ import java.util.Optional;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class UserService implements CrudService<UserDto> {
-    private static UserService INSTANCE;
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
-    private UserService() {
+    public UserService() {
         userMapper = UserMapper.getInstance();
-        userRepository = UserRepository.getInstance();
-    }
-
-    public static UserService getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new UserService();
-        }
-        return INSTANCE;
+        userRepository = new UserRepository();
     }
 
     @Override

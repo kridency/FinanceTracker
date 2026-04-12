@@ -11,9 +11,8 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class AuthTerminal extends AbstractTerminal<UserDto> {
-    private static AuthTerminal INSTANCE;
 
-    private AuthTerminal() {
+    public AuthTerminal() {
         commandMenu = System.lineSeparator() + "\tregister (Регистрация пользователя)"
                 + System.lineSeparator() + "\tlogin (Вход в систему)"
                 + System.lineSeparator() + "\texit (Завершение сеанса)";
@@ -26,13 +25,6 @@ public class AuthTerminal extends AbstractTerminal<UserDto> {
                     .orElseThrow(() -> new ApplicationException(UNAUTHORIZED))));
             put("exit", user -> { throw new RuntimeException(FORCED_COMPLETION); });
         }};
-    }
-
-    public static AuthTerminal getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new AuthTerminal();
-        }
-        return INSTANCE;
     }
 
     @Override

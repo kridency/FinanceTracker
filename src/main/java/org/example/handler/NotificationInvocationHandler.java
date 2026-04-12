@@ -20,7 +20,7 @@ public class NotificationInvocationHandler<T extends AbstractDto> implements Inv
 
     public NotificationInvocationHandler(final CrudService<T> service) {
         this.service = service;
-        notificationService = NotificationService.getInstance();
+        notificationService = new NotificationService();
     }
 
     @Override

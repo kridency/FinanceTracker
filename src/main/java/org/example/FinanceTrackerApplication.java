@@ -22,13 +22,13 @@ public class FinanceTrackerApplication {
 
     static {
         terminals = new HashMap<>() {{
-            put("authentication", AuthTerminal.getInstance());
-            put("identity", UserTerminal.getInstance());
-            put("finance", TransactionTerminal.getInstance());
-            put("budget", BudgetTerminal.getInstance());
-            put("goal", GoalTerminal.getInstance());
-            put("analytics", AnalyticsTerminal.getInstance());
-            put("administration", AdminTerminal.getInstance());
+            put("authentication", new AuthTerminal());
+            put("identity", new UserTerminal());
+            put("finance", new TransactionTerminal());
+            put("budget", new BudgetTerminal());
+            put("goal", new GoalTerminal());
+            put("analytics", new AnalyticsTerminal());
+            put("administration", new AdminTerminal());
         }};
 
         COMMAND_MENU = System.lineSeparator() + "\tidentity (Управление пользователями)"

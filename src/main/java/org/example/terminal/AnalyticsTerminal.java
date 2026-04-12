@@ -19,16 +19,15 @@ import static org.example.preset.FinancialTrackerInit.DATE_FORMAT;
 import static org.example.preset.FinancialTrackerInit.RETURN;
 
 public class AnalyticsTerminal extends AbstractTerminal<Map.Entry<Map.Entry<LocalDate, LocalDate>, Long>> {
-    private static AnalyticsTerminal INSTANCE;
     private static AnalyticsService analyticsService;
 
-    private AnalyticsTerminal() {
+    public AnalyticsTerminal() {
         commandMenu = System.lineSeparator() + "\tbalance (Подсчёт текущего баланса)"
                 + System.lineSeparator() + "\tsummary (Расчёт суммарного дохода и расхода за определённый период)"
                 + System.lineSeparator() + "\texpenses (Анализ расходов по категориям)"
                 + System.lineSeparator() + "\tcondition (Формирование отчёта для пользователя по финансовому состоянию)"
                 + System.lineSeparator() + "\treturn (Возврат в главное меню)";
-        analyticsService = AnalyticsService.getInstance();
+        analyticsService = new AnalyticsService();
         commands = new ConcurrentHashMap<>() {{
             put("balance", data -> System.out.println(analyticsService.balance(data)));
             put("summary", data -> System.out.println(analyticsService.summary(data)));
@@ -36,13 +35,6 @@ public class AnalyticsTerminal extends AbstractTerminal<Map.Entry<Map.Entry<Loca
             put("condition", data -> System.out.println(analyticsService.condition(data)));
             put("return", user -> {});
         }};
-    }
-
-    public static AnalyticsTerminal getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new AnalyticsTerminal();
-        }
-        return INSTANCE;
     }
 
     @Override

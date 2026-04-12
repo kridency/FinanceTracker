@@ -17,22 +17,14 @@ import java.util.stream.IntStream;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class FundService implements CrudService<FundDto> {
-    private static FundService INSTANCE;
     private final FundRepository fundRepository;
     private final FundMapper fundMapper;
     private final UserRepository userRepository;
 
-    private FundService() {
-        userRepository = UserRepository.getInstance();
-        fundRepository = FundRepository.getInstance();
+    public FundService() {
+        userRepository = new UserRepository();
+        fundRepository = new FundRepository();
         fundMapper = FundMapper.getInstance();
-    }
-
-    public static FundService getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new FundService();
-        }
-        return INSTANCE;
     }
 
     public FundDto create(FundDto data) {

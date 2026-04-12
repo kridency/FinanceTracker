@@ -43,7 +43,7 @@ public class TransactionServlet extends AbstractServlet<TransactionDto> {
         service = (CrudService<TransactionDto>) Proxy.newProxyInstance (
                 CrudService.class.getClassLoader(),
                 new Class<?>[] { CrudService.class },
-                new NotificationInvocationHandler<>(TransactionService.getInstance()));
+                new NotificationInvocationHandler<>(new TransactionService()));
     }
 
     public static TransactionServlet getInstance() {

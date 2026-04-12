@@ -12,11 +12,13 @@ import org.example.exception.ApplicationException;
 import org.example.property.ApplicationProperties;
 import org.example.property.LiquibaseProperties;
 import org.example.service.UserService;
-import org.postgresql.ds.PGConnectionPoolDataSource;
+import org.postgresql.ds.PGSimpleDataSource;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
 import org.testcontainers.utility.DockerImageName;
+
+import javax.sql.DataSource;
 
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
@@ -26,7 +28,7 @@ public abstract class AbstractTest {
 
     protected static PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>(
             DockerImageName.parse("postgres:12.20"));
-    protected static PGConnectionPoolDataSource datasource;
+    protected static PGSimpleDataSource datasource;
     protected final static UserService userService;
 
     static {
@@ -39,12 +41,12 @@ public abstract class AbstractTest {
                 .withEnv("PGTZ", "UTC")
                 .withUrlParam("connectionTimeZone", "UTC")
                 .start();
-        datasource = PostgreSQLClient.getInstance().getDataSource();
+        datasource = new PostgreSQLClient().getDataSource();
         datasource.setPortNumbers(new int[]{
                 postgreSQLContainer
                         .getMappedPort(Integer.parseInt(applicationProperties.getProperty("datasource.port")))
         });
-        userService = UserService.getInstance();
+        userService = new UserService();
 
         try(var connection = datasource.getConnection()) {
             var database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(connection));

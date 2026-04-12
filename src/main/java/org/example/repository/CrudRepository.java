@@ -1,11 +1,11 @@
 package org.example.repository;
 
 import org.example.client.PostgreSQLClient;
-import org.postgresql.ds.PGConnectionPoolDataSource;
+import javax.sql.DataSource;
 import java.util.Optional;
 
 public interface CrudRepository<T> {
-    PGConnectionPoolDataSource datasource = PostgreSQLClient.getInstance().getDataSource();
+    PostgreSQLClient CLIENT = new PostgreSQLClient();
 
     T add(T t);
     T update(T t);

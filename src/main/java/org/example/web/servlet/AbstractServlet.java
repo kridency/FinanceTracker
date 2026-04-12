@@ -23,7 +23,7 @@ import static org.example.preset.FinancialTrackerInit.BAD_ENDPOINT;
 public abstract class AbstractServlet<T extends AbstractDto> extends HttpServlet {
     protected String PATH;
     protected CrudService<T> service;
-    protected final UserService userService = UserService.getInstance();
+    protected final UserService userService = new UserService();
 
     protected static final BiFunction<HttpServletResponse, PrintWriter, Void> unauthorized = (response, writer) -> {
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

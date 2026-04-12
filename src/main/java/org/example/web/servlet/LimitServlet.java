@@ -33,7 +33,7 @@ public class LimitServlet extends AbstractServlet<LimitDto> {
 
     private LimitServlet() {
         PATH = "/api/v1/limit";
-        service = LimitService.getInstance();
+        service = new LimitService();
     }
 
     public static LimitServlet getInstance() {

@@ -24,8 +24,8 @@ public class AnalyticsServlet extends HttpServlet {
 
     private AnalyticsServlet() {
         PATH = "/api/v1/analytics";
-        service = AnalyticsService.getInstance();
-        userService = UserService.getInstance();
+        service = new AnalyticsService();
+        userService = new UserService();
     }
 
     public static AnalyticsServlet getInstance() {

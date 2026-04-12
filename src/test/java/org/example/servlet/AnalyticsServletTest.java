@@ -18,7 +18,7 @@ import java.util.Map;
 import static org.example.preset.FinancialTrackerInit.DATE_FORMAT;
 
 public class AnalyticsServletTest {
-    private final AnalyticsService analyticsService = Mockito.spy(AnalyticsService.getInstance());
+    private final AnalyticsService analyticsService = Mockito.spy(new AnalyticsService());
     private final Map.Entry<Map.Entry<LocalDate, LocalDate>, Long> dto =
             Map.entry(Map.entry(LocalDate.parse("01.01.2024", DATE_FORMAT), LocalDate.parse("31.12.2024", DATE_FORMAT)), 2L);
 

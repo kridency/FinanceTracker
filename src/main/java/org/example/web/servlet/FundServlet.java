@@ -31,7 +31,7 @@ public class FundServlet extends AbstractServlet<FundDto> {
 
     private FundServlet() {
         PATH = "/api/v1/fund";
-        service = FundService.getInstance();
+        service = new FundService();
     }
 
     public static FundServlet getInstance() {

@@ -15,22 +15,14 @@ import java.util.Optional;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class LimitService implements CrudService<LimitDto> {
-    private static LimitService INSTANCE;
     private final LimitRepository limitRepository;
     private final LimitMapper limitMapper;
     private final UserRepository userRepository;
 
-    private LimitService() {
+    public LimitService() {
         limitMapper = LimitMapper.getInstance();
-        limitRepository = LimitRepository.getInstance();
-        userRepository = UserRepository.getInstance();
-    }
-
-    public static LimitService getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new LimitService();
-        }
-        return INSTANCE;
+        limitRepository = new LimitRepository();
+        userRepository = new UserRepository();
     }
 
     public LimitDto create(LimitDto data) {

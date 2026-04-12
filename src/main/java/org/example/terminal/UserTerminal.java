@@ -10,10 +10,9 @@ import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class UserTerminal extends AbstractTerminal<UserDto> {
-    private static UserTerminal INSTANCE;
     private final UserMapper userMapper;
 
-    private UserTerminal() {
+    public UserTerminal() {
         commandMenu = System.lineSeparator() + "\tupdate (Редактирование профиля пользователя)"
                 + System.lineSeparator() + "\tdelete (Удаление пользователя)"
                 + System.lineSeparator() + "\treturn (Возврат в главное меню)";
@@ -23,13 +22,6 @@ public class UserTerminal extends AbstractTerminal<UserDto> {
             put("delete", userService::remove);
             put("return", user -> {});
         }};
-    }
-
-    public static UserTerminal getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new UserTerminal();
-        }
-        return INSTANCE;
     }
 
     @Override

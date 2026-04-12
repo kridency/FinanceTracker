@@ -35,7 +35,7 @@ public class RequestWrapper extends HttpServletRequestWrapper {
         super(request);
         this.ex = ex;
         this.postData = postData;
-        userService = UserService.getInstance();
+        userService = new UserService();
         Optional.ofNullable(getCookies()).ifPresent(value -> setAttribute("JSESSIONID",
             Arrays.stream(value)
                     .filter(cookie -> cookie.getName().equals("JSESSIONID"))

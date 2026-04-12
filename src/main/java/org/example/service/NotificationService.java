@@ -4,19 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class NotificationService {
-    private static NotificationService INSTANCE;
-    private static Set<Long> subscribers;
-
-    private NotificationService() {
-        subscribers = new HashSet<>();
-    }
-
-    public static NotificationService getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new NotificationService();
-        }
-        return INSTANCE;
-    }
+    private final static Set<Long> subscribers = new HashSet<>();
 
     public void notify(Long id) {
         if (subscribers.contains(id)) {

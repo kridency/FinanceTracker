@@ -18,7 +18,7 @@ public abstract class AbstractTerminal<T> {
     protected String commandMenu;
     protected Map<String, Consumer<T>> commands;
     protected CrudService<T> service;
-    protected final UserService userService = UserService.getInstance();
+    protected final UserService userService = new UserService();
 
     protected abstract T processCommand(String command);
 

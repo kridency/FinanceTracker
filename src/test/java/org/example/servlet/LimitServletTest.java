@@ -23,7 +23,7 @@ import java.time.YearMonth;
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
 public class LimitServletTest extends AbstractTest {
-    private static final LimitService limitService = Mockito.spy(LimitService.getInstance());
+    private static final LimitService limitService = Mockito.spy(new LimitService());
 
     @Test
     @DisplayName("Печать лимитов отфильтрованных по шаблону")

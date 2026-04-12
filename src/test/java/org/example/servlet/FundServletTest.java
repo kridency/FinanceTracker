@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
 public class FundServletTest extends AbstractTest {
-    private static final FundService fundService = Mockito.spy(FundService.getInstance());
+    private static final FundService fundService = Mockito.spy(new FundService());
 
     @Test
     @DisplayName("Печать фондов накоплений отфильтрованных по шаблону")

@@ -5,7 +5,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.example.AbstractTest;
 import org.example.dto.TransactionDto;
 import org.example.entity.TransactionType;
-import org.example.service.TransactionService;
 import org.example.web.listener.RequestStream;
 import org.example.web.listener.RequestWrapper;
 import org.example.web.listener.ResponseWrapper;
@@ -58,6 +57,6 @@ public class NotificationServletTest extends AbstractTest  {
         Mockito.when(response.getWriter()).thenReturn(writer);
 
         TransactionServlet.getInstance().doPost(request, response);
-        Mockito.verify(writer)  .println("Уведомление: превышение установленного лимита расходования");
+        Mockito.verify(writer).println("Уведомление: превышение установленного лимита расходования");
     }
 }

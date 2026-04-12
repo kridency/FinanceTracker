@@ -12,14 +12,13 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GoalTerminal extends AbstractTerminal<FundDto> {
-    private static GoalTerminal INSTANCE;
 
-    private GoalTerminal() {
+    public GoalTerminal() {
         commandMenu = System.lineSeparator() + "\tproclaim (Установить фонд накоплений)"
                 + System.lineSeparator() + "\ttransfer (Перечисление в фонд накоплений)"
                 + System.lineSeparator() + "\ttrack (Отслеживание состояния фонда накоплений)"
                 + System.lineSeparator() + "\treturn (Возврат в главное меню)";
-        service = FundService.getInstance();
+        service = new FundService();
         commands = new ConcurrentHashMap<>() {{
             put("proclaim", service::create);
             put("transfer", service::update);
@@ -27,13 +26,6 @@ public class GoalTerminal extends AbstractTerminal<FundDto> {
             put("track", fund -> print(fund));
             put("return", fund -> {});
         }};
-    }
-
-    public static GoalTerminal getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new GoalTerminal();
-        }
-        return INSTANCE;
     }
 
     @Override

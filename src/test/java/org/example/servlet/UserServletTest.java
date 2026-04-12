@@ -20,7 +20,7 @@ import java.io.*;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class UserServletTest extends AbstractTest {
-    private static final TransactionService transactionService = Mockito.spy(TransactionService.getInstance());
+    private static final TransactionService transactionService = Mockito.spy(new TransactionService());
 
     @Test
     @DisplayName("Создание учетной записи пользователя.")

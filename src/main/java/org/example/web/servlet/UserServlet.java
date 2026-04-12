@@ -26,7 +26,7 @@ public class UserServlet extends AbstractServlet<UserDto> {
 
     private UserServlet() {
         service = userService;
-        transactionService = TransactionService.getInstance();
+        transactionService = new TransactionService();
     }
 
     public static UserServlet getInstance() {

@@ -4,6 +4,7 @@ import org.example.entity.Limit;
 import org.example.entity.User;
 import org.example.exception.ApplicationException;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
@@ -16,8 +17,8 @@ import java.util.stream.Stream;
 import static org.example.preset.FinancialTrackerInit.*;
 
 public class LimitRepository implements CrudRepository<Limit> {
-    private static LimitRepository INSTANCE;
     private final CrudRepository<User> userRepository;
+    private final DataSource dataSource;
 
     private static final String INSERT_QUERY = "INSERT INTO \"limit\" (month, amount, user_id) VALUES (?,?,?)";
     private static final String UPDATE_QUERY = "UPDATE \"limit\" SET amount=? WHERE id=?";
@@ -27,20 +28,14 @@ public class LimitRepository implements CrudRepository<Limit> {
     private static final String GET_ALL_QUERY = "SELECT * FROM \"limit\"";
     private static final String GET_BY_ID_QUERY = "SELECT * FROM \"limit\" WHERE id=?";
 
-    private LimitRepository() {
-        userRepository = UserRepository.getInstance();
-    }
-
-    public static LimitRepository getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new LimitRepository();
-        }
-        return INSTANCE;
+    public LimitRepository() {
+        dataSource = CLIENT.getDataSource();
+        userRepository = new UserRepository();
     }
 
     public Limit add(Limit limit) {
         return Optional.ofNullable(limit).map(newValue -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(INSERT_QUERY)) {
                 var month = Optional.ofNullable(newValue.getMonth()).map(x -> x.format(MONTH_FORMAT))
                         .orElse(YearMonth.now().format(MONTH_FORMAT));
@@ -57,7 +52,7 @@ public class LimitRepository implements CrudRepository<Limit> {
 
     public Limit update(Limit limit) {
         return Optional.ofNullable(limit).map(newValue -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(UPDATE_QUERY)) {
                 statement.setBigDecimal(1, newValue.getAmount());
                 statement.setLong(2, newValue.getId());
@@ -70,7 +65,7 @@ public class LimitRepository implements CrudRepository<Limit> {
 
     public Limit delete(Limit limit) {
         return Optional.ofNullable(limit).map(value -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(DELETE_QUERY)) {
                 statement.setLong(1, value.getId());
                 return statement.executeUpdate() == 1 ? value : null;
@@ -84,7 +79,7 @@ public class LimitRepository implements CrudRepository<Limit> {
         return Optional.ofNullable(userId).map(id -> {
             var user = userRepository.getById(id).orElseThrow(() -> new ApplicationException(USER_NOT_FOUND));
             return Optional.ofNullable(month).map(value -> {
-                try (var connection = datasource.getConnection();
+                try (var connection = dataSource.getConnection();
                      var statement = connection.prepareStatement(GET_UNIQUE_QUERY)) {
                     statement.setLong(1, id);
                     statement.setString(2, value.format(MONTH_FORMAT));
@@ -109,7 +104,7 @@ public class LimitRepository implements CrudRepository<Limit> {
     public Collection<Limit> getAllByUserId(Long userId) {
         return Optional.ofNullable(userId).map(id -> {
             var user = userRepository.getById(id).orElseThrow(() -> new ApplicationException(USER_NOT_FOUND));
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(GET_BY_USERID_QUERY)) {
                 statement.setLong(1, id);
                 try (var resultSet = statement.executeQuery()) {
@@ -139,7 +134,7 @@ public class LimitRepository implements CrudRepository<Limit> {
     }
 
     public Collection<Limit> getAll() {
-        try (var connection = datasource.getConnection();
+        try (var connection = dataSource.getConnection();
              var statement = connection.prepareStatement(GET_ALL_QUERY);
              var resultSet = statement.executeQuery()) {
             return Stream.generate(() -> {
@@ -166,7 +161,7 @@ public class LimitRepository implements CrudRepository<Limit> {
 
     public Optional<Limit> getById(Long limitId) {
         return Optional.ofNullable(limitId).map(id -> {
-            try (var connection = datasource.getConnection();
+            try (var connection = dataSource.getConnection();
                  var statement = connection.prepareStatement(GET_BY_ID_QUERY)) {
                 statement.setLong(1, id);
                 try (var resultSet = statement.executeQuery()) {

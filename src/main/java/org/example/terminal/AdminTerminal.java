@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 import static org.example.preset.FinancialTrackerInit.RETURN;
 
 public class AdminTerminal extends AbstractTerminal<UserDto> {
-    private static AdminTerminal INSTANCE;
     private final TransactionService transactionService;
 
     public static final Function<Collection<UserDto>, String> VIEW = collection ->
@@ -29,13 +28,13 @@ public class AdminTerminal extends AbstractTerminal<UserDto> {
                                     + "\t\t|\t" + value.getEmail() + "\t|\t\t" + value.getPassword() + "\t\t|\t"
                                     + value.getRole() + "\t\t\t|\t" + value.getStatus()).collect(Collectors.joining("\n"));
 
-    private AdminTerminal() {
+    public AdminTerminal() {
         commandMenu = System.lineSeparator() + "\tusers (Список пользователей)"
                 + System.lineSeparator() + "\ttransactions (Список транзакций пользователя)"
                 + System.lineSeparator() + "\tblock (Блокировка пользователя)"
                 + System.lineSeparator() + "\tdelete (Удаление пользователя)"
                 + System.lineSeparator() + "\treturn (Возврат в главное меню)";
-        transactionService = TransactionService.getInstance();
+        transactionService = new TransactionService();
         commands = new ConcurrentHashMap<>() {{
             put("users", user -> print(user));
             put("transactions", user -> {
@@ -49,13 +48,6 @@ public class AdminTerminal extends AbstractTerminal<UserDto> {
             put("remove", userService::remove);
             put("return", user -> {});
         }};
-    }
-
-    public static AdminTerminal getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new AdminTerminal();
-        }
-        return INSTANCE;
     }
 
     @Override

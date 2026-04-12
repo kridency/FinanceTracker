@@ -26,7 +26,7 @@ import java.time.Instant;
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
 public class TransactionServletTest extends AbstractTest {
-    private static final TransactionService transactionService = Mockito.spy(TransactionService.getInstance());
+    private static final TransactionService transactionService = Mockito.spy(new TransactionService());
 
     @Test
     @DisplayName("Печать транзакций отфильтрованных по шаблону")
@@ -54,7 +54,7 @@ public class TransactionServletTest extends AbstractTest {
     @DisplayName("Попытка создать транзакцию")
     void givenUserAndTransactionDto_whenTryToCreate_thenReturnCorrectResult() throws IOException {
         TransactionDto newTransaction = new TransactionDto();
-        newTransaction.setDate(Instant.parse("2024-12-15T12:00:00.00Z"));
+        newTransaction.setDate(Instant.parse("2024-12-25T12:00:00.00Z"));
         newTransaction.setType(TransactionType.WITHDRAW);
         newTransaction.setCategory("Payment");
         newTransaction.setAmount(new BigDecimal("80"));

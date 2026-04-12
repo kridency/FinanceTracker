@@ -13,8 +13,8 @@ import java.util.Optional;
 
 @Aspect
 public class ExchangeAspect {
-    private final UserService userService = UserService.getInstance();
-    private final InvocationRepository invocationRepository = InvocationRepository.getInstance();
+    private final UserService userService = new UserService();
+    private final InvocationRepository invocationRepository = new InvocationRepository();
 
     @Before(value = "execution(public * jakarta.servlet.http.HttpServlet..do*(jakarta.servlet.http.HttpServletRequest, ..))" +
             "&& args(request, ..)", argNames = "request")
