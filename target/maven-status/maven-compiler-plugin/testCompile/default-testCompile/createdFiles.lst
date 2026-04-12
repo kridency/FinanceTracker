@@ -1,7 +1,0 @@
-org/example/AbstractTest.class
-org/example/servlet/FundServletTest.class
-org/example/servlet/AnalyticsServletTest.class
-org/example/servlet/UserServletTest.class
-org/example/servlet/TransactionServletTest.class
-org/example/servlet/LimitServletTest.class
-org/example/servlet/NotificationServletTest.class

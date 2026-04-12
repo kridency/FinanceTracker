@@ -1,2 +1,0 @@
-DROP TYPE IF EXISTS status_type;
-CREATE TYPE status_type AS ENUM ('ACTIVE','BLOCKED');

@@ -1,9 +1,0 @@
-changeLogFile: db/changelog/dbchangelog.xml
-defaultSchemaName: custom
-liquibaseSchemaName: public
-driver: org.postgresql.Driver
-url: jdbc:postgresql://localhost:5432/tracker_db
-username: intern
-password: 1gjAVnJ
-contexts: production,test
-parameter.schemaName: custom
