@@ -1,5 +1,6 @@
 services:
   postgres:
+    container_name: postgres-container
     image: postgres:12.20
     ports:
       - "5432:5432"
@@ -11,3 +12,5 @@ services:
     expose:
       - 5432
     restart: unless-stopped
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
