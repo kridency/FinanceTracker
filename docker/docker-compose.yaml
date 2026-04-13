@@ -24,12 +24,15 @@ services:
     container_name: liquibase-container
     image: liquibase/liquibase:4.31.0
     volumes:
-      - ../src/main/resources:/liquibase/changelog
       - ../src/main/resources/liquibase.yml:/liquibase/liquibase.yml
+      - ../src/main/resources:/liquibase/changelog
     command: >
       --url=jdbc:postgresql://postgres-container.docker_default:5432/tracker_db
       --search-path=/liquibase/changelog
+      --changelog-file=db/changelog/dbchangelog.xml
       --defaults-file=liquibase.yml
+      --username=intern
+      --password=1gjAVnJ
       update
     depends_on:
       postgres:
