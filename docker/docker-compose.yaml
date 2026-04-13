@@ -14,3 +14,23 @@ services:
     restart: unless-stopped
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U intern -d tracker_db" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  liquibase:
+    container_name: liquibase-container
+    image: liquibase/liquibase:4.31.0
+    volumes:
+      - ../src/main/resources:/liquibase/changelog
+      - ../src/main/resources/liquibase.yml:/liquibase/liquibase.yml
+    command: >
+      --url=jdbc:postgresql://postgres-container.docker_default:5432/tracker_db
+      --search-path=/liquibase/changelog
+      --defaults-file=liquibase.yml
+      update
+    depends_on:
+      postgres:
+        condition: service_healthy
