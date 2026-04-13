@@ -2,6 +2,7 @@ package org.example.servlet;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.example.AbstractTest;
 import org.example.service.AnalyticsService;
 import org.example.web.listener.RequestWrapper;
 import org.example.web.listener.ResponseWrapper;
@@ -17,7 +18,7 @@ import java.util.Map;
 
 import static org.example.preset.FinancialTrackerInit.DATE_FORMAT;
 
-public class AnalyticsServletTest {
+public class AnalyticsServletTest extends AbstractTest {
     private final AnalyticsServlet analyticsServlet = Mockito.spy(new AnalyticsServlet());
     private final AnalyticsService analyticsService = Mockito.spy(new AnalyticsService());
     private final Map.Entry<Map.Entry<LocalDate, LocalDate>, Long> dto =
