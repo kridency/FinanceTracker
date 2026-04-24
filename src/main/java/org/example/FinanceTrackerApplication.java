@@ -47,7 +47,7 @@ public class FinanceTrackerApplication {
         objectMapper.registerModule(new JavaTimeModule());
 
         try {
-            while(true) {
+            while(System.console() != null) {
                 Optional.ofNullable(AbstractTerminal.getPrincipal()).ifPresentOrElse(user -> {
                     var adminMenu = user.getRole().equals(RoleType.ADMIN) ? System.lineSeparator()
                             + "\tadministration (Администрирование)" : "";
@@ -76,7 +76,7 @@ public class FinanceTrackerApplication {
                 }, () -> terminals.get("authentication").runCommands());
             }
         } catch (RuntimeException e) {
-            LOGGER.log(Level.INFO, e.getMessage());
+            LOGGER.log(Level.INFO, e.getClass().getName() + " --- " + e.getMessage());
             HttpListener.getInstance().stop();
             System.exit(0);
         }

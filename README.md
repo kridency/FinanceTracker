@@ -21,28 +21,29 @@
 
 ## Сборка
 
-Перед cборкой проекта потребуется запуск Docker образа с СУБД PostgreSQL в качестве резидента, который производится командой:
-``docker compose --project-directory ./docker/ up --detach``. 
-
 Сборка проекта производится командой ``mvn clean package``. При успешном завершении результаты сборки будут расположены в папке ``target/``
-
-## Запуск
 
 Первоначально необходимо построить контейнер на основе образа, содержащего Java JDK 17, при помощи следующей команды:
 ```
-docker build -t finance_tracker .
+docker build --tag finance-tracker .
 ```
+
+Перед cборкой проекта потребуется запуск Docker образа с СУБД PostgreSQL в качестве резидента, который производится командой:
+``docker compose --project-directory ./docker/ up --detach``.
+
+## Запуск
+
 Для запуска приложения необходимо выполнить следующие команды: 
 
 
 Поскольку приложение помимо клиент-серверного взаимодействия через HTTP-запросы предполагает диалог с пользователем через меню в псевдо-терминале, для запуска приложения могут быть использованы следующие варианты команд:
 1. без интерактивного меню:
 ```
-docker run --name=finance-tracker --network docker_default --rm --publish 8080:8080 finance_tracker
+docker compose --project-directory ./docker/ run --detach --rm app
 ```
 2. с интерактивным меню:
 ```
-docker run --interactive --tty --name=finance-tracker --network docker_default --rm --publish 8080:8080 finance_tracker
+docker compose --project-directory ./docker/ run --rm app
 ```
 
 ## Инструкции по использованию

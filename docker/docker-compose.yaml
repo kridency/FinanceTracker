@@ -22,7 +22,7 @@ services:
 
   liquibase:
     container_name: liquibase-container
-    image: liquibase/liquibase:4.31.0
+    image: liquibase:4.31.0
     volumes:
       - ../src/main/resources/liquibase.yml:/liquibase/liquibase.yml
       - ../src/main/resources:/liquibase/changelog
@@ -37,3 +37,21 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+
+  app:
+    container_name: finance-tracker
+    image: finance-tracker
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - docker_default
+
+networks:
+  docker_default:
+    external: true
+    name: docker_default
