@@ -32,7 +32,7 @@ mvn clean package
 docker build --tag finance-tracker .
 ```
 
-Сборканеобходимых контейнеров из созданных образов производится коммандой:
+Сборка необходимых контейнеров из созданных образов производится коммандой:
 ```
 docker compose --project-directory ./docker/ up --detach
 ```
