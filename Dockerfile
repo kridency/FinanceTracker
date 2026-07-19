@@ -2,7 +2,7 @@ FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-ENV POSTGRES_DATASOURCE_URL='jdbc:postgresql://postgres-container.docker_default:5432/tracker_db?currentSchema=custom&createDatabaseIfNotExist=true'
+ENV POSTGRES_DATASOURCE_URL='jdbc:postgresql://postgres-container:5432/tracker_db?currentSchema=custom&createDatabaseIfNotExist=true'
 
 COPY target/FinanceTracker-1.0.0-SNAPSHOT.jar app.jar
 
