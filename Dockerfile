@@ -8,6 +8,6 @@ COPY target/FinanceTracker-1.0.0-SNAPSHOT.jar app.jar
 
 ENV CREATE_ON_STARTUP=false
 
-EXPOSE 8080
+EXPOSE 8081
 
 CMD ["java", "-jar", "app.jar"]

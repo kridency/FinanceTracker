@@ -15,7 +15,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <start-class>org.example.FinanceTrackerApplication</start-class>
         <mockito.version>5.21.0</mockito.version>
-        <aspectj.version>1.9.23</aspectj.version>
+        <aspectj.version>1.9.25</aspectj.version>
         <assertj-core.version>3.27.3</assertj-core.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <spring.version>3.4.4</spring.version>
@@ -38,6 +38,7 @@
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
         <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
+        <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
         <slf4j.version>2.0.17</slf4j.version>
         <snakeyaml.version>2.5</snakeyaml.version>
     </properties>
@@ -169,6 +170,36 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-dependency-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-agents</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.mockito</groupId>
+                                    <artifactId>mockito-core</artifactId>
+                                    <version>${mockito.version}</version>
+                                    <outputDirectory>${project.build.directory}/agents</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.aspectj</groupId>
+                                    <artifactId>aspectjweaver</artifactId>
+                                    <version>${aspectj.version}</version>
+                                    <outputDirectory>${project.build.directory}/agents</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
                 <version>${aspect-maven-plugin.version}</version>
@@ -257,8 +288,8 @@
                         <include>**/*Test.java</include>
                     </includes>
                     <argLine>
-                        -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar
-                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                        -javaagent:${project.build.directory}/agents/mockito-core-${mockito.version}.jar
+                        -javaagent:${project.build.directory}/agents/aspectjweaver-${aspectj.version}.jar
                         -Xshare:off
                     </argLine>
                 </configuration>
