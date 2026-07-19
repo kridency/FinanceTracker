@@ -40,10 +40,7 @@ public abstract class AbstractTest {
                 .withUrlParam("connectionTimeZone", "UTC")
                 .start();
         datasource = CrudRepository.CLIENT.getDataSource();
-        datasource.setPortNumbers(new int[]{
-                postgreSQLContainer
-                        .getMappedPort(Integer.parseInt(applicationProperties.getProperty("datasource.port")))
-        });
+        datasource.setUrl(postgreSQLContainer.getJdbcUrl());
         userService = new UserService();
 
         try(var connection = datasource.getConnection()) {
