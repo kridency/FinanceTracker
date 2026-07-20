@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3.9.6-eclipse-temurin-17'
-            args '-v /var/run/docker.sock:/var/run/docker.sock:z -v /usr/bin/docker:/usr/bin/docker --user=root'
+            args '-v /var/run/docker.sock:/var/run/docker.sock:z --user=root'
         }
     }
 
@@ -18,7 +18,7 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('Build Package') {
             environment {
                 TESTCONTAINERS_RYUK_DISABLED = 'true'
             }
@@ -29,15 +29,6 @@ pipeline {
                 always {
                     junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
                 }
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    docker.build("finance-tracker:latest", ".")
-                }
-                echo 'Docker-образ finance-tracker:latest успешно собран!'
             }
         }
     }
