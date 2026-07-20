@@ -34,7 +34,9 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build --tag finance-tracker:latest .'
+                script {
+                    docker.build("finance-tracker:latest", ".")
+                }
                 echo 'Docker-образ finance-tracker:latest успешно собран!'
             }
         }
