@@ -2,6 +2,7 @@ package org.example.web.listener;
 
 import com.sun.net.httpserver.HttpServer;
 import org.example.exception.ApplicationException;
+import org.example.property.ApplicationProperties;
 import org.example.web.handler.*;
 
 import java.io.IOException;
@@ -16,6 +17,8 @@ public class HttpListener {
     private final LimitHandler limitHandler;
     private final NotificationHandler notificationHandler;
     private final AnalyticsHandler analyticsHandler;
+
+    protected static final ApplicationProperties applicationProperties = ApplicationProperties.getInstance();
 
     private HttpListener() {
         userHandler = new UserHandler();
@@ -40,9 +43,10 @@ public class HttpListener {
         }
     }
 
-    public void startHTTPServer(int port) {
+    public void startHTTPServer() {
         try {
-            httpServer = HttpServer.create(new InetSocketAddress(port), 100);
+            var address = new InetSocketAddress(Integer.parseInt(applicationProperties.getProperty("app.port")));
+            httpServer = HttpServer.create(address, 100);
             httpServer.createContext("/api/v1/auth/", userHandler);
             httpServer.createContext("/api/v1/identity/", userHandler);
             httpServer.createContext("/api/v1/administration/", userHandler);

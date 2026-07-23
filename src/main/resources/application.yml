@@ -1,3 +1,6 @@
+app:
+    port: 8081
+
 datasource:
     url: jdbc:postgresql://localhost/
     port: 5432
