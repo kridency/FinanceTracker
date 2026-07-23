@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
 import org.testcontainers.utility.DockerImageName;
+import org.testcontainers.utility.MountableFile;
 
 import static org.example.preset.FinancialTrackerInit.objectMapper;
 
@@ -24,8 +25,8 @@ public abstract class AbstractTest {
     protected static final ApplicationProperties applicationProperties = ApplicationProperties.getInstance();
     protected static final LiquibaseProperties liquibaseProperties = LiquibaseProperties.getInstance();
 
-    protected static PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>(
-            DockerImageName.parse("postgres:12.20"));
+    protected static PostgreSQLContainer<?> postgreSQLContainer =
+            new PostgreSQLContainer<>(DockerImageName.parse("postgres:12.20"));
     protected static PGSimpleDataSource datasource;
     protected final static UserService userService;
 
@@ -34,6 +35,8 @@ public abstract class AbstractTest {
                 .withDatabaseName(applicationProperties.getProperty("datasource.database"))
                 .withUsername(applicationProperties.getProperty("datasource.username"))
                 .withPassword(applicationProperties.getProperty("datasource.password"))
+                .withCopyFileToContainer(MountableFile.forHostPath("docker/init.sql"),
+                        "/docker-entrypoint-initdb.d/init.sql")
                 .withLogConsumer(new Slf4jLogConsumer(LoggerFactory.getLogger("🐳 " + "postgres")))
                 .withEnv("TZ", "UTC")
                 .withEnv("PGTZ", "UTC")
@@ -46,8 +49,10 @@ public abstract class AbstractTest {
         try(var connection = datasource.getConnection()) {
             var database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(connection));
             database.setDefaultSchemaName(liquibaseProperties.getProperty("defaultSchemaName"));
-            database.setLiquibaseSchemaName("public");
-            var liquibase  = new Liquibase(liquibaseProperties.getProperty("changeLogFile"), new ClassLoaderResourceAccessor(), database);
+            database.setLiquibaseSchemaName(liquibaseProperties.getProperty("liquibaseSchemaName"));
+
+            var liquibase  = new Liquibase(liquibaseProperties.getProperty("changeLogFile"),
+                    new ClassLoaderResourceAccessor(), database);
             liquibase.setChangeLogParameter("schemaName", liquibaseProperties.getProperty("defaultSchemaName"));
             liquibase.dropAll();
             liquibase.update(new Contexts("test"));
