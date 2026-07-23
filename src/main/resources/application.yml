@@ -1,5 +1,5 @@
 app:
-    port: 8081
+    port: ${APP_PORT:8081}
 
 datasource:
     url: jdbc:postgresql://localhost/
