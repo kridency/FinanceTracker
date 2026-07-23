@@ -10,12 +10,15 @@ import org.example.exception.ApplicationException;
 import org.example.service.CrudService;
 import org.example.service.UserService;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.Principal;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.BiFunction;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static org.example.preset.FinancialTrackerInit.*;
 import static org.example.preset.FinancialTrackerInit.BAD_ENDPOINT;
@@ -25,19 +28,25 @@ public abstract class AbstractServlet<T extends AbstractDto> extends HttpServlet
     protected CrudService<T> service;
     protected final UserService userService = new UserService();
 
-    protected static final BiFunction<HttpServletResponse, PrintWriter, Void> unauthorized = (response, writer) -> {
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        writer.println(UNAUTHORIZED);
-        return null;
-    };
+    protected static final BiFunction<HttpServletResponse, PrintWriter, Void> unauthorized =
+            (response, writer) -> {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                writer.println(UNAUTHORIZED);
+                return null;
+            };
 
     protected int create(PrintWriter writer, T dto) {
-        if (service.create(dto) != null) {
-            writer.println("Запись " + dto.name() + " успешно создана.");
-            return HttpServletResponse.SC_CREATED;
-        } else {
-            writer.println("Не удалось создать запись.");
-            return HttpServletResponse.SC_INTERNAL_SERVER_ERROR;
+        try {
+            if (service.create(dto) != null) {
+                writer.println("Запись " + dto.name() + " успешно создана.");
+                return HttpServletResponse.SC_CREATED;
+            } else {
+                writer.println("Не удалось создать запись.");
+                return HttpServletResponse.SC_INTERNAL_SERVER_ERROR;
+            }
+        } catch (ApplicationException e) {
+            writer.println(e.getMessage());
+            return HttpServletResponse.SC_BAD_REQUEST;
         }
     }
 
@@ -70,7 +79,31 @@ public abstract class AbstractServlet<T extends AbstractDto> extends HttpServlet
         }
     }
 
-    protected abstract void process(HttpServletRequest request, HttpServletResponse response, String endpoint);
+    protected void process(HttpServletRequest request, HttpServletResponse response, String endpoint, Class<T> dtoClass) {
+        String[] tokens = request.getPathInfo().split(PATH);
+        try {
+            if (tokens.length > 1 && tokens[1].equals(endpoint)) {
+                try (BufferedReader reader = request.getReader()) {
+                    var body = Optional.of(reader.lines().collect(Collectors.joining()))
+                            .filter(Predicate.not(String::isEmpty)).orElse("{}");
+                    var dto = objectMapper.readValue(body, dtoClass);
+                    execute(request, response, dto);
+                } catch (Exception e) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+                }
+            } else {
+                try (PrintWriter writer = response.getWriter()) {
+                    response.setStatus(HttpServletResponse.SC_MISDIRECTED_REQUEST);
+                    writer.println(BAD_ENDPOINT);
+                } catch (Exception e) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+                }
+            }
+        } catch (IOException e) {
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            throw new ApplicationException(e.getMessage());
+        }
+    }
 
     protected void execute(HttpServletRequest request, HttpServletResponse response, T dto) {
         response.setContentType("application/json");
@@ -102,25 +135,5 @@ public abstract class AbstractServlet<T extends AbstractDto> extends HttpServlet
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             throw new ApplicationException(e.getMessage());
         }
-    }
-
-    @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/list");
-    }
-
-    @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/create");
-    }
-
-    @Override
-    public void doPut(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/update");
-    }
-
-    @Override
-    public void doDelete(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/delete");
     }
 }

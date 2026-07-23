@@ -109,6 +109,7 @@ public class RequestWrapper extends HttpServletRequestWrapper {
                 .map(x -> x.split(":"))
                 .map(x -> new UserDto(null, x[0], x[1]))
                 .map(dto -> {
+                    dto.setRole(null);
                     var user = userService.findAllByDto(dto).stream().findAny().orElse(null);
                     if (user == null) {
                         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

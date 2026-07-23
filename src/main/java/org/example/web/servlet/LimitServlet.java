@@ -1,17 +1,9 @@
 package org.example.web.servlet;
 
 import org.example.dto.LimitDto;
-import org.example.exception.ApplicationException;
 import org.example.service.LimitService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.stream.Collectors;
-
-import static org.example.preset.FinancialTrackerInit.*;
 
 public class LimitServlet extends AbstractServlet<LimitDto> {
 
@@ -20,29 +12,23 @@ public class LimitServlet extends AbstractServlet<LimitDto> {
         service = new LimitService();
     }
 
-    protected void process(HttpServletRequest request, HttpServletResponse response, String endpoint) {
-        String[] tokens = request.getPathInfo().split(PATH);
-        if (tokens.length > 1 && tokens[1].equals(endpoint)) {
-            try (BufferedReader reader = request.getReader()) {
-                var dto = objectMapper.readValue(reader.lines().collect(Collectors.joining()), LimitDto.class);
-                execute(request, response, dto);
-            } catch (Exception e) {
-                try {
-                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
-                } catch (IOException ex) {
-                    response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                    throw new ApplicationException(ex.getMessage());
-                }
-            }
-        }
-        else {
-            try (PrintWriter writer = response.getWriter()) {
-                response.setStatus(HttpServletResponse.SC_MISDIRECTED_REQUEST);
-                writer.println(BAD_ENDPOINT);
-            } catch (IOException e) {
-                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                throw new ApplicationException(e.getMessage());
-            }
-        }
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response, "/list", LimitDto.class);
+    }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response, "/create", LimitDto.class);
+    }
+
+    @Override
+    public void doPut(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response, "/update", LimitDto.class);
+    }
+
+    @Override
+    public void doDelete(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response, "/delete", LimitDto.class);
     }
 }

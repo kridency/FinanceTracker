@@ -2,21 +2,13 @@ package org.example.web.servlet;
 
 import jakarta.servlet.annotation.WebServlet;
 import org.example.dto.TransactionDto;
-import org.example.exception.ApplicationException;
 import org.example.handler.NotificationInvocationHandler;
 import org.example.service.CrudService;
 import org.example.service.TransactionService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.lang.reflect.Proxy;
-import java.util.stream.Collectors;
-
-import static org.example.preset.FinancialTrackerInit.*;
-import static org.example.preset.FinancialTrackerInit.BAD_ENDPOINT;
 
 @WebServlet(urlPatterns = {"/api/v1/transaction/create",
         "/api/v1/transaction/update",
@@ -33,43 +25,24 @@ public class TransactionServlet extends AbstractServlet<TransactionDto> {
                 new NotificationInvocationHandler<>(new TransactionService()));
     }
 
-    protected int create(PrintWriter writer, TransactionDto transaction) {
-            try {
-                if (service.create(transaction) != null) {
-                    writer.println("Запись " + transaction.getDescription() + " успешно создана.");
-                    return HttpServletResponse.SC_CREATED;
-                } else {
-                    writer.println("Не удалось создать транзакцию.");
-                    return HttpServletResponse.SC_BAD_REQUEST;
-                }
-            } catch (ApplicationException e) {
-                writer.println(e.getMessage());
-                return HttpServletResponse.SC_BAD_REQUEST;
-            }
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response, "/list", TransactionDto.class);
     }
 
-    protected void process(HttpServletRequest request, HttpServletResponse response, String endpoint) {
-        String[] tokens = request.getPathInfo().split(PATH);
-        try {
-            if (tokens.length > 1 && tokens[1].equals(endpoint)) {
-                try (BufferedReader reader = request.getReader()) {
-                    var dto = objectMapper.readValue(reader.lines().collect(Collectors.joining()), TransactionDto.class);
-                    execute(request, response, dto);
-                } catch (Exception e) {
-                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
-                }
-            } else {
-                try (PrintWriter writer = response.getWriter()) {
-                    response.setStatus(HttpServletResponse.SC_MISDIRECTED_REQUEST);
-                    writer.println(BAD_ENDPOINT);
-                } catch (Exception e) {
-                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
-                }
-            }
-        } catch (IOException e) {
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            throw new ApplicationException(e.getMessage());
-        }
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response, "/create", TransactionDto.class);
+    }
+
+    @Override
+    public void doPut(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response, "/update", TransactionDto.class);
+    }
+
+    @Override
+    public void doDelete(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response, "/delete", TransactionDto.class);
     }
 }
 

@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.security.Principal;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static org.example.preset.FinancialTrackerInit.*;
@@ -52,8 +53,6 @@ public class UserServlet extends AbstractServlet<UserDto> {
         }
     }
 
-    protected void process(HttpServletRequest request, HttpServletResponse response, String endpoint) {}
-
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("application/json;charset=UTF-8");
@@ -64,7 +63,9 @@ public class UserServlet extends AbstractServlet<UserDto> {
             Optional.ofNullable(request.getUserPrincipal()).map(Principal::getName).map(userService::findByEmail)
                     .ifPresentOrElse(principal -> {
                         try {
-                            var dto = objectMapper.readValue(reader.lines().collect(Collectors.joining()), UserDto.class);
+                            var dto = objectMapper.readValue(Optional.of(reader.lines().collect(Collectors.joining()))
+                                    .filter(Predicate.not(String::isEmpty))
+                                    .orElse("{}"), UserDto.class);
                             if (path.contains("/api/v1/administration")) {
                                 if (principal.getRole().equals(RoleType.ADMIN)) {
                                     String id = request.getParameter("id");
