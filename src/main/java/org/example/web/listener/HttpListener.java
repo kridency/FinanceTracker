@@ -4,6 +4,7 @@ import com.sun.net.httpserver.HttpServer;
 import org.example.exception.ApplicationException;
 import org.example.property.ApplicationProperties;
 import org.example.web.handler.*;
+import org.example.web.servlet.*;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -11,22 +12,22 @@ import java.net.InetSocketAddress;
 public class HttpListener {
     private static HttpListener INSTANCE;
     private HttpServer httpServer;
-    private final UserHandler userHandler;
-    private final TransactionHandler transactionHandler;
-    private final FundHandler fundHandler;
-    private final LimitHandler limitHandler;
-    private final NotificationHandler notificationHandler;
-    private final AnalyticsHandler analyticsHandler;
+    private final WebHandler<UserServlet> userHandler;
+    private final WebHandler<TransactionServlet> transactionHandler;
+    private final WebHandler<FundServlet> fundHandler;
+    private final WebHandler<LimitServlet> limitHandler;
+    private final WebHandler<NotificationServlet> notificationHandler;
+    private final WebHandler<AnalyticsServlet> analyticsHandler;
 
     protected static final ApplicationProperties applicationProperties = ApplicationProperties.getInstance();
 
     private HttpListener() {
-        userHandler = new UserHandler();
-        transactionHandler = new TransactionHandler();
-        fundHandler = new FundHandler();
-        limitHandler = new LimitHandler();
-        notificationHandler = new NotificationHandler();
-        analyticsHandler = new AnalyticsHandler();
+        userHandler = new WebHandler<>();
+        transactionHandler = new WebHandler<>();
+        fundHandler = new WebHandler<>();
+        limitHandler = new WebHandler<>();
+        notificationHandler = new WebHandler<>();
+        analyticsHandler = new WebHandler<>();
     }
 
     public static HttpListener getInstance() {

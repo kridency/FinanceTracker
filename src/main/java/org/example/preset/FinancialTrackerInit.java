@@ -38,12 +38,13 @@ public class FinancialTrackerInit {
     static {
         UNAUTHORIZED = "Необходимо пройти аутентификацию";
         RETURN = "return";
+        NEW_LINE = System.lineSeparator();
         INPUT_ERROR = "Неопознанная команда";
         EMAIL_ERROR = "Неправильный формат email";
         DATE_ERROR = "Неправильный формат даты";
         TITLE_ERROR = "Не указана цель";
-        COMMAND_PROMPT = System.lineSeparator() + "Введите команду :> ";
-        FORCED_COMPLETION =  "Принудительное завершение" + System.lineSeparator();
+        COMMAND_PROMPT = NEW_LINE + "Введите команду :> ";
+        FORCED_COMPLETION =  "Принудительное завершение" + NEW_LINE;
         USER_NOT_FOUND = "Пользователь не найден";
         TRANSACTION_NOT_FOUND = "Транзакция не найдена";
         LIMIT_NOT_FOUND = "Лимит не найден";
@@ -59,7 +60,6 @@ public class FinancialTrackerInit {
         DELETED = "Объект успешно удален";
         OBJECT_NOT_CREATED = "Объект не создан";
         OBJECT_NOT_UPDATED = "Объект не обновлен";
-        NEW_LINE = System.lineSeparator();
 
         objectMapper = new ObjectMapper();
     }

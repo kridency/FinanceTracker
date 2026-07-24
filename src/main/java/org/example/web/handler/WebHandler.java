@@ -18,9 +18,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public abstract class AbstractHandler implements HttpHandler {
+public class WebHandler<V extends HttpServlet> implements HttpHandler {
     @Inject
-    protected HttpServlet servlet;
+    protected V servlet;
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
         byte[] inBytes = getBytes(httpExchange.getRequestBody());
@@ -49,8 +49,12 @@ public abstract class AbstractHandler implements HttpHandler {
         }
     }
 
+    public V getServlet() {
+        return servlet;
+    }
+
     @SuppressWarnings("unchecked")
-    protected static <T> T createUnimplementAdapter(Class<T> httpServletApi) {
+    private static <T> T createUnimplementAdapter(Class<T> httpServletApi) {
         class UnimplementedHandler implements InvocationHandler {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) {
@@ -63,7 +67,7 @@ public abstract class AbstractHandler implements HttpHandler {
                 new UnimplementedHandler());
     }
 
-    protected byte[] getBytes(InputStream in) throws IOException {
+    private byte[] getBytes(InputStream in) throws IOException {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
         while (true) {
@@ -74,11 +78,7 @@ public abstract class AbstractHandler implements HttpHandler {
         return out.toByteArray();
     }
 
-    public HttpServlet getServlet() {
-        return servlet;
-    }
-
-    public static Map<String, String[]> splitQuery(String query) {
+    private static Map<String, String[]> splitQuery(String query) {
         final Map<String, List<String>> query_pairs = new LinkedHashMap<>();
         return Optional.ofNullable(query).map(value -> value.split("&")).map(pairs -> {
             for (String pair : pairs) {
