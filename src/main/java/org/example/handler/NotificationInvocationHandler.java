@@ -20,7 +20,7 @@ public class NotificationInvocationHandler<T extends AbstractDto> implements Inv
 
     public NotificationInvocationHandler(final CrudService<T> service) {
         this.service = service;
-        notificationService = new NotificationService();
+        this.notificationService = new NotificationService();
     }
 
     @Override
@@ -35,7 +35,7 @@ public class NotificationInvocationHandler<T extends AbstractDto> implements Inv
 
                 if (residue.subtract(withdrawal).compareTo(BigDecimal.ZERO) < 0) {
                     try {
-                        notificationService.notify(dto.getUserId());
+                        notificationService.notify(id);
                     } catch (ApplicationException e) {
                         throw new ApplicationException(e.getMessage());
                     }

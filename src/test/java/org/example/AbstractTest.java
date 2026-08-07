@@ -47,14 +47,14 @@ public abstract class AbstractTest {
         userService = new UserService();
 
         try(var connection = datasource.getConnection()) {
+            var defaultSchema = liquibaseProperties.getProperty("defaultSchemaName");
             var database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(connection));
-            database.setDefaultSchemaName(liquibaseProperties.getProperty("defaultSchemaName"));
+            database.setDefaultSchemaName(defaultSchema);
             database.setLiquibaseSchemaName(liquibaseProperties.getProperty("liquibaseSchemaName"));
 
             var liquibase  = new Liquibase(liquibaseProperties.getProperty("changeLogFile"),
                     new ClassLoaderResourceAccessor(), database);
-            liquibase.setChangeLogParameter("schemaName", liquibaseProperties.getProperty("defaultSchemaName"));
-            liquibase.dropAll();
+            liquibase.setChangeLogParameter("schemaName", defaultSchema);
             liquibase.update(new Contexts("test"));
             objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
             objectMapper.registerModule(new JavaTimeModule());

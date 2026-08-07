@@ -38,8 +38,7 @@ public class NotificationServletTest extends AbstractTest  {
         Mockito.when(request.getUserPrincipal()).thenReturn(() -> "name@hostname");
         Mockito.when(response.getWriter()).thenReturn(writer);
         Mockito.when(request.getReader())
-                .thenReturn(new BufferedReader(new InputStreamReader(new RequestStream(objectMapper
-                        .writeValueAsString("{}").getBytes()))));
+                .thenReturn(new BufferedReader(new InputStreamReader(new RequestStream("".getBytes()))));
 
         notificationServlet.doPut(request, response);
         Mockito.verify(response).setStatus(HttpServletResponse.SC_OK);
