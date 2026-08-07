@@ -14,33 +14,29 @@
         <java.source-target.version>17</java.source-target.version>
         <maven.compiler.release>17</maven.compiler.release>
         <start-class>org.example.FinanceTrackerApplication</start-class>
-        <mockito.version>5.21.0</mockito.version>
+
         <aspectj.version>1.9.25</aspectj.version>
-        <assertj-core.version>3.27.3</assertj-core.version>
-        <org.mapstruct.version>1.6.3</org.mapstruct.version>
-        <spring.version>3.4.4</spring.version>
-        <spring-security-test.version>6.4.4</spring-security-test.version>
-        <spring-aop.version>5.3.4</spring-aop.version>
-        <testcontainers.version>2.0.3</testcontainers.version>
-        <testcontainers-jdbc.version>1.21.4</testcontainers-jdbc.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
         <jackson.version>2.21.1</jackson.version>
         <postgresql.version>42.7.8</postgresql.version>
         <liquibase.version>5.0.1</liquibase.version>
-        <logback-classic.version>1.5.17</logback-classic.version>
         <jakarta.version>2.0.1</jakarta.version>
-        <jakarta.persistence.version>3.2.0</jakarta.persistence.version>
-        <jakarta.ws.rs.version>4.0.0</jakarta.ws.rs.version>
         <jakarta.servlet.version>6.1.0</jakarta.servlet.version>
+        <jakarta.ws.rs.version>4.0.0</jakarta.ws.rs.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <snakeyaml.version>2.5</snakeyaml.version>
+
+        <testcontainers.version>2.0.3</testcontainers.version>
+        <testcontainers-jdbc.version>1.21.4</testcontainers-jdbc.version>
+        <mockito.version>5.21.0</mockito.version>
         <junit.jupiter.version>5.11.4</junit.jupiter.version>
+
+        <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
         <liquibase-maven-plugin.version>4.31.1</liquibase-maven-plugin.version>
-        <apache.commons.version>1.27.1</apache.commons.version>
         <aspect-maven-plugin.version>1.15.0</aspect-maven-plugin.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
-        <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
-        <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
-        <slf4j.version>2.0.17</slf4j.version>
-        <snakeyaml.version>2.5</snakeyaml.version>
+        <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
     </properties>
 
     <dependencies>
@@ -66,7 +62,7 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>${org.mapstruct.version}</version>
+            <version>${mapstruct.version}</version>
         </dependency>
 
         <dependency>
@@ -271,7 +267,7 @@
                                 <path>
                                     <groupId>org.mapstruct</groupId>
                                     <artifactId>mapstruct-processor</artifactId>
-                                    <version>${org.mapstruct.version}</version>
+                                    <version>${mapstruct.version}</version>
                                 </path>
                             </annotationProcessorPaths>
                         </configuration>
@@ -296,38 +292,27 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.0</version>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
                 <configuration>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>module-info.class</exclude>
-                                <exclude>META-INF/versions/**/module-info.class</exclude>
-                                <exclude>META-INF/LICENSE*</exclude>
-                                <exclude>META-INF/NOTICE*</exclude>
-                                <exclude>META-INF/*.MF</exclude>
-                                <exclude>META-INF/*.SF</exclude>
-                                <exclude>META-INF/*.DSA</exclude>
-                                <exclude>META-INF/*.RSA</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <attach>false</attach>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.example.FinanceTrackerApplication</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
                 <executions>
                     <execution>
+                        <id>make-assembly</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>shade</goal>
+                            <goal>single</goal>
                         </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>org.example.FinanceTrackerApplication</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
