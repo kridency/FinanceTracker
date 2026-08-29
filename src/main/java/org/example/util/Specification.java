@@ -24,12 +24,15 @@ public record Specification<T>(T data) implements Function<Collection<T>, Collec
         }
     };
 
-    private Map<String, Optional<?>> getCriteria() {
-        return Arrays.stream(data.getClass().getDeclaredFields()).filter(field -> !field.getName().equals("id"))
+    private Map<String, Optional<? extends Comparable<?>>> getCriteria() {
+        return Arrays.stream(data.getClass().getDeclaredFields())
+                .filter(field -> !field.getName().equals("id"))
+                .filter(field -> !field.getType().isPrimitive())
+                .filter(field -> Comparable.class.isAssignableFrom(field.getType()))
                 .collect(Collectors.toMap(Field::getName, field -> {
                     try {
                         field.setAccessible(true);
-                        return Optional.ofNullable(field.get(data));
+                        return Optional.ofNullable((Comparable<?>) field.get(data));
                     } catch (IllegalAccessException e) {
                         throw new ApplicationException(e.getMessage());
                     }

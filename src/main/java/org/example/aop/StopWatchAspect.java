@@ -1,11 +1,8 @@
 package org.example.aop;
 
-import jakarta.inject.Scope;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-
-import java.lang.annotation.Retention;
 
 @Aspect
 public class StopWatchAspect {
