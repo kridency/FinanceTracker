@@ -14,21 +14,29 @@ public class LimitServlet extends AbstractServlet<LimitDto> {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/list", LimitDto.class);
+        this.request = request;
+        this.response =response;
+        process("/list", LimitDto.class);
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/create", LimitDto.class);
+        this.request = request;
+        this.response =response;
+        process("/create", LimitDto.class);
     }
 
     @Override
     public void doPut(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/update", LimitDto.class);
+        this.request = request;
+        this.response =response;
+        process("/update", LimitDto.class);
     }
 
     @Override
     public void doDelete(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/delete", LimitDto.class);
+        this.request = request;
+        this.response =response;
+        process("/delete", LimitDto.class);
     }
 }

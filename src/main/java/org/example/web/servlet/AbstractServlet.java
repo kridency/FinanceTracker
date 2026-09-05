@@ -28,6 +28,9 @@ public abstract class AbstractServlet<T extends AbstractDto> extends HttpServlet
     protected CrudService<T> service;
     protected final UserService userService = new UserService();
 
+    protected HttpServletRequest request;
+    protected HttpServletResponse response;
+
     protected static final BiFunction<HttpServletResponse, PrintWriter, Void> unauthorized =
             (response, writer) -> {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -79,7 +82,7 @@ public abstract class AbstractServlet<T extends AbstractDto> extends HttpServlet
         }
     }
 
-    protected void process(HttpServletRequest request, HttpServletResponse response, String endpoint, Class<T> dtoClass) {
+    protected void process(String endpoint, Class<T> dtoClass) {
         String[] tokens = request.getPathInfo().split(PATH);
         try {
             if (tokens.length > 1 && tokens[1].equals(endpoint)) {
@@ -87,7 +90,7 @@ public abstract class AbstractServlet<T extends AbstractDto> extends HttpServlet
                     var body = Optional.of(reader.lines().collect(Collectors.joining()))
                             .filter(Predicate.not(String::isEmpty)).orElse("{}");
                     var dto = objectMapper.readValue(body, dtoClass);
-                    execute(request, response, dto);
+                    execute(dto);
                 } catch (Exception e) {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
                 }
@@ -105,7 +108,7 @@ public abstract class AbstractServlet<T extends AbstractDto> extends HttpServlet
         }
     }
 
-    protected void execute(HttpServletRequest request, HttpServletResponse response, T dto) {
+    protected void execute(T dto) {
         response.setContentType("application/json");
         try (PrintWriter writer = response.getWriter()) {
             Optional.ofNullable(request.getUserPrincipal())

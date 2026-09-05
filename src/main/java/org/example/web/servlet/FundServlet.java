@@ -14,21 +14,29 @@ public class FundServlet extends AbstractServlet<FundDto> {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/list", FundDto.class);
+        this.request = request;
+        this.response =response;
+        process("/list", FundDto.class);
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/create", FundDto.class);
+        this.request = request;
+        this.response =response;
+        process("/create", FundDto.class);
     }
 
     @Override
     public void doPut(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/update", FundDto.class);
+        this.request = request;
+        this.response =response;
+        process("/update", FundDto.class);
     }
 
     @Override
     public void doDelete(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/delete", FundDto.class);
+        this.request = request;
+        this.response =response;
+        process("/delete", FundDto.class);
     }
 }

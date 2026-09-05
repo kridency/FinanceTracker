@@ -27,22 +27,30 @@ public class TransactionServlet extends AbstractServlet<TransactionDto> {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/list", TransactionDto.class);
+        this.request = request;
+        this.response = response;
+        process("/list", TransactionDto.class);
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/create", TransactionDto.class);
+        this.request = request;
+        this.response = response;
+        process("/create", TransactionDto.class);
     }
 
     @Override
     public void doPut(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/update", TransactionDto.class);
+        this.request = request;
+        this.response = response;
+        process("/update", TransactionDto.class);
     }
 
     @Override
     public void doDelete(HttpServletRequest request, HttpServletResponse response) {
-        process(request, response, "/delete", TransactionDto.class);
+        this.request = request;
+        this.response = response;
+        process("/delete", TransactionDto.class);
     }
 }
 
